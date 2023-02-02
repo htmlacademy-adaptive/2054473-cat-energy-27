@@ -1,0 +1,49 @@
+@use "./global/variables.scss";
+@use "./global/mixins.scss";
+
+html {
+  height: 100%;
+  background-color: variables.$color-body;
+}
+
+body {
+  @include mixins.font-lato-normal;
+  background-color: variables.$color-white;
+  margin: 0 auto;
+  color: variables.$color-black;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  min-height: 100%;
+  box-shadow: 0 5px 15px rgba(1, 1, 1, 0.2);
+}
+
+.visually-hidden {
+  visibility: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+
+  @include mixins.media-mobile-only {
+    width: auto;
+  }
+
+  @include mixins.media-tablet {
+    width: 100%;
+    height: 100%;
+  }
+}

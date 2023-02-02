@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Кэт энерджи</title>
-  </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">HTML и CSS. Адаптивная вёрстка и автоматизация</a>».</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Academy: Кэт энерджи</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="/img/svg/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/favicon/favicon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="/fonts/Lato.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="/fonts/Oswaldregular.woff2" as="font" type="font/woff2">
+  <link rel="stylesheet" href="/css/style.min.css">
+</head>
 
-  </body>
+<body>
+  <header class="main-header">
+    <a class="main-header__logo" href="#">
+      <picture>
+        <source media="(min-width: 1440px)" srcset="img/svg/tab-cat.svg" sizes="202px">
+        <source media="(min-width: 768px)" srcset="img/svg/desk-cat.svg" sizes="174px">
+        <img class="logo__img" src="img/svg/mob-cat.svg" width="34" height="38" alt="На главную.">
+      </picture>
+      <img class="logo__text" src="img/svg/head-logo.svg" width="101" height="18" alt="Кэт энерджи.">
+    </a>
+
+    <nav class="main-nav main-nav--closed main-nav--nojs">
+      <button class="main-nav__toggle" type="button">
+        <span class="visually-hidden">Открыть меню.</span>
+      </button>
+
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a class="main-nav__link main-nav__link--current" href="#">Главная</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="catalog.html">Каталог продукции</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="form.html">Подбор программы</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>
