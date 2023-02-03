@@ -1,18 +1,16 @@
 @use "../global/use.scss";
 
-.main-header {
-  position: relative;
-  outline: 1px solid yellow;
-}
-
-.main-conatainer {
-  // padding: 0 20px;
-}
+.main-header {}
 
 .logo__img {
   display: block;
   position: absolute;
   top: 12px;
+
+  @include use.media-tablet {
+    width: 174px;
+    height: 52px;
+  }
 }
 
 .logo__text {
@@ -28,7 +26,7 @@
 }
 
 .main-header__logo {
-  display: block;
+  display: inline-block;
   width: 208px;
   height: 38px;
 
@@ -94,7 +92,6 @@
   margin-left: -20px;
 
   @include use.media-tablet {
-    position: inherit;
     z-index: 0;
     display: block;
     top: 0;
@@ -108,7 +105,7 @@
 
   @include use.media-tablet {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
   }
 }
@@ -126,23 +123,15 @@
     border-bottom: 1px solid #E6E6E6;
     background-color: use.$color-white;
 
-
     &:first-child {
       border-top: 1px solid #E6E6E6;
     }
   }
 
   @include use.media-tablet {
-    min-width: 144px;
-    max-width: 154px;
-    flex-grow: 1;
     background-color: transparent;
     box-shadow: none;
     border-bottom: none;
-
-    &:nth-child(3) {
-      margin-left: calc(100% - 617px);
-    }
   }
 
   @include use.media-middle {
@@ -206,59 +195,57 @@
   text-align: center;
   position: relative;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 2px solid use.$color-black;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  &--current::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: use.$color-green;
+    transition: width 0.35s;
+  }
+
   @include use.media-mobile-only {
     @include use.font-oswald-big;
     line-height: 40px;
     color: use.$color-black;
     left: -2px;
     margin: 12px 41px;
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    &:focus-visible {
-      outline: 2px solid use.$color-black;
-    }
-
-    // &:active {
-    //   border-top: 2px solid transparent;
-    //   border-bottom: 2px solid use.$color-green;
-    // }
-
-    &:disabled {
-      opacity: 0.6;
-    }
-
-    &--current::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 100%;
-      height: 2px;
-      background-color: use.$color-green;
-      transition: width 0.35s;
-    }
   }
 
   @include use.media-tablet {
-    @include use.font-oswald-normal;
-    font-weight: 700;
+    @include use.font-oswald-18;
     color: use.$color-black;
     padding: 19px 20px 16px 20px;
 
-    &:hover {
-      color: use.$color-aqua;
-    }
+    // &:hover {
+    //   color: use.$color-aqua;
+    // }
 
-    &:focus-visible {
-      outline: 2px solid use.$color-black;
-    }
+    // &:focus-visible {
+    //   outline: 2px solid use.$color-black;
+    // }
 
-    &:active {
-      color: rgba(1, 1, 1, 0.3);
-    }
+    // &:active {
+    //   color: rgba(1, 1, 1, 0.3);
+    // }
   }
 }
 

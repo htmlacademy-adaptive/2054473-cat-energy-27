@@ -26,6 +26,13 @@
   line-height: 20px;
 }
 
+@mixin font-oswald-18 {
+  font-family: "Oswald", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 @mixin font-oswald-big {
   font-family: "Oswald", "Arial", sans-serif;
   font-weight: 500;
