@@ -1,0 +1,25 @@
+@use "../global/use.scss";
+
+.btn {
+  @include use.font-oswald-small;
+  display: block;
+  color: use.$color-white;
+  background-color: use.$color-green;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #5eaa2f;
+  }
+
+  &:focus-visible {
+    outline: 2px solid use.$color-black;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, .3);
+  }
+}
