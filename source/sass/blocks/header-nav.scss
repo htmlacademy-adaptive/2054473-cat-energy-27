@@ -7,7 +7,7 @@
 
   @include use.media-desktop {
     position: relative;
-    min-height: 690px;
+    min-height: 694px;
     margin-bottom: 82px;
 
     &::before {
@@ -16,8 +16,8 @@
       right: 0;
       top: -4px;
       width: 50%;
-      min-height: 694px;
-      width: 716px;
+      min-height: 697px;
+      width: 719px;
       background-color: rgba(104, 183, 56, .85);
       z-index: 2;
     }
@@ -27,8 +27,8 @@
       position: absolute;
       top: -4px;
       right: 0;
-      width: 716px;
-      height: 694px;
+      width: 719px;
+      height: 697px;
       background-image: url("../img/web-desk-main-cat.webp");
       background-repeat: no-repeat;
       background-position: left bottom;
@@ -148,7 +148,7 @@
   }
 
   @include use.media-desktop {
-    padding: 49px 107px 0 113px;
+    padding: 53px 111px 0 110px;
     margin-bottom: 112px;
   }
 }
