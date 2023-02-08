@@ -1,9 +1,14 @@
 @use "../global/use.scss";
 
 .main-header {
+  @include use.media-mobile-only {
+    margin-bottom: 20px;
+  }
+
   @include use.media-desktop {
     position: relative;
-    min-height: 693px;
+    min-height: 690px;
+    margin-bottom: 82px;
 
     &::before {
       content: "";
@@ -11,8 +16,8 @@
       right: 0;
       top: -4px;
       width: 50%;
-      min-height: 693px;
-      width: 717px;
+      min-height: 694px;
+      width: 716px;
       background-color: rgba(104, 183, 56, .85);
       z-index: 2;
     }
@@ -22,11 +27,11 @@
       position: absolute;
       top: -4px;
       right: 0;
-      width: 717px;
-      height: 693px;
+      width: 716px;
+      height: 694px;
       background-image: url("../img/web-desk-main-cat.webp");
       background-repeat: no-repeat;
-      background-position: left top;
+      background-position: left bottom;
       background-size: contain;
       background-color: #444;
       z-index: 1;
@@ -97,7 +102,7 @@
 
 .main-nav {
   position: relative;
-  padding: 14px 20px;
+  padding: 11px 20px;
   z-index: 5;
 
   @include use.media-mobile-only {

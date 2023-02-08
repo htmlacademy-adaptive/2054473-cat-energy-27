@@ -1,0 +1,184 @@
+@use "../global/use.scss";
+
+.main-block {
+  display: block;
+}
+
+.main-container-program {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include use.media-mobile-only {
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  @include use.media-tablet {
+    padding: 0 30px;
+    row-gap: 30px;
+    margin-bottom: 45px;
+  }
+
+  @include use.media-desktop {
+    padding: 0 106px 0 114px;
+    flex-direction: row;
+    column-gap: 80px;
+    margin-bottom: 71px;
+  }
+}
+
+.main-program-box {
+  background-color: use.$color-program;
+  position: relative;
+
+  &--thin::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 53px;
+    top: 21px;
+    left: 23px;
+    background-image: url("../img/svg/mob-cat-thin.svg");
+    background-repeat: no-repeat;
+
+    @include use.media-tablet {
+      width: 200px;
+      height: 211px;
+      left: auto;
+      top: 81px;
+      right: 61px;
+      background-image: url("../img/svg/tab-cat-thin.svg");
+    }
+
+    @include use.media-desktop {
+      width: 100px;
+      height: 106px;
+      left: 52px;
+      top: 41px;
+      right: auto;
+      background-image: url("../img/svg/desk-cat-thin.svg");
+    }
+  }
+
+  &--weight::before {
+    content: "";
+    position: absolute;
+    width: 67px;
+    height: 50px;
+    top: 24px;
+    left: 13px;
+    background-image: url("../img/svg/mob-cat-weight.svg");
+    background-repeat: no-repeat;
+
+    @include use.media-tablet {
+      width: 268px;
+      height: 200px;
+      left: auto;
+      top: 91px;
+      right: 27px;
+      background-image: url("../img/svg/tab-cat-weight.svg");
+    }
+
+    @include use.media-desktop {
+      width: 134px;
+      height: 100px;
+      left: 33px;
+      top: 47px;
+      right: auto;
+      background-image: url("../img/svg/desk-cat-weight.svg");
+    }
+  }
+
+  @include use.media-mobile-only {
+    padding: 30px 33px 16px 20px;
+  }
+
+  @include use.media-tablet {
+    padding: 77px 316px 57px 53px;
+  }
+
+  @include use.media-desktop {
+    padding: 77px 48px 59px 52px;
+    max-width: 470px;
+  }
+}
+
+.main-program-title {
+  margin: 0;
+  text-transform: uppercase;
+  position: relative;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-24;
+    margin-bottom: 29px;
+    padding-left: 72px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-bold;
+    margin-bottom: 24px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 73px;
+    padding-left: 162px;
+  }
+}
+
+.main-program-text {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-small;
+    color: use.$color-program-text;
+    border-bottom: 1px solid use.$color-program-border;
+    padding-bottom: 23px;
+    margin-bottom: 16px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-lato-normal;
+    margin-bottom: 52px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 27px;
+  }
+}
+
+.main-program-link {
+  position: relative;
+  margin: 0;
+  color: use.$color-black;
+  text-transform: uppercase;
+  text-decoration: none;
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 12px;
+    top: 6px;
+    left: 100px;
+    background-image: url("../img/svg/arrow.svg");
+    background-repeat: no-repeat;
+
+    @include use.media-tablet {
+      top: 9px;
+      left: 131px;
+    }
+  }
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-normal;
+    line-height: 16px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    line-height: 30px;
+  }
+}
