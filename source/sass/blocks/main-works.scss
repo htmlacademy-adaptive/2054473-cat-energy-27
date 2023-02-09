@@ -1,0 +1,172 @@
+@use "../global/use.scss";
+
+.main-works {
+  display: block;
+
+  @include use.media-mobile-only {
+    margin-bottom: 49px;
+    padding: 0 21px;
+  }
+
+  @include use.media-tablet {
+    padding-bottom: 53px;
+    border-bottom: 1px solid use.$color-line;
+    margin-bottom: 43px;
+  }
+
+  @include use.media-desktop {
+    margin: 0;
+    border: none;
+    padding: 0 106px 0 110px;
+    margin-bottom: 70px;
+  }
+}
+
+.works-box {
+  @include use.media-tablet {
+    padding: 0 31px;
+  }
+
+  @include use.media-desktop {
+    padding: 0;
+  }
+}
+
+.works-box__title {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-bold;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-large;
+    margin-bottom: 71px;
+  }
+}
+
+.works-box__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  @include use.media-mobile-only {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  @include use.media-tablet {
+    counter-reset: section;
+    flex-direction: row;
+    column-gap: 135px;
+    row-gap: 87px;
+  }
+
+  @include use.media-desktop {
+    column-gap: 77px;
+  }
+}
+
+.works-box__item {
+  list-style: none;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-color: use.$color-green;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: inherit;
+    transform: translateY(-50%);
+
+    @include use.media-tablet {
+      top: 0;
+      width: 80px;
+      height: 80px;
+      transform: none;
+    }
+  }
+
+  &:nth-child(1)::before {
+    background-image: url("../img/svg/how-it-leaf.svg");
+  }
+
+  &:nth-child(2)::before {
+    background-image: url("../img/svg/how-it-powder.svg");
+  }
+
+  &:nth-child(3)::before {
+    background-image: url("../img/svg/how-it-eat.svg");
+  }
+
+  &:nth-child(4)::before {
+    background-image: url("../img/svg/how-it-clock.svg");
+  }
+
+  @include use.media-mobile-only {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 60px;
+    padding-left: 80px;
+    color: use.$color-gray;
+  }
+
+  @include use.media-tablet {
+    width: 248px;
+    min-height: 72px;
+    padding-top: 111px;
+    padding-bottom: 48px;
+
+    &::after {
+      counter-increment: section;
+      content: counter(section);
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include use.font-oswald-big;
+      font-size: 280px;
+      line-height: 201px;
+      color: use.$color-program;
+    }
+
+    &:nth-child(1)::after {
+      right: 26px;
+    }
+
+    &:nth-child(2)::after {
+      right: 5px;
+    }
+
+    &:nth-child(3)::after {
+      right: 4px;
+    }
+
+    &:nth-child(4)::after {
+      right: 2px;
+    }
+  }
+}
+
+.works-box__text {
+  margin: 0;
+  position: relative;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-small;
+  }
+
+  @include use.media-tablet {
+    @include use.font-lato-normal;
+    z-index: 1;
+    max-width: 250px;
+  }
+}

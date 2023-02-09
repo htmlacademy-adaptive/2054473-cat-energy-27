@@ -39,14 +39,14 @@
   }
 }
 
-.main-promo__container {
+.promo-box {
   padding: 0 20px;
   display: block;
   position: relative;
   z-index: 3;
 }
 
-.main-promo__title {
+.promo-box__title {
   margin: 0;
 
   @include use.media-mobile-only {
@@ -70,7 +70,7 @@
 }
 
 
-.main-promo__desc {
+.promo-box__desc {
   margin: 0;
   text-transform: uppercase;
 
@@ -93,7 +93,7 @@
   }
 }
 
-.main-promo__img {
+.promo-box__img {
   display: block;
   position: relative;
   margin: 0 auto;
@@ -117,7 +117,7 @@
   }
 }
 
-.main-promo__btn {
+.promo-box__btn {
   @include use.media-mobile-only {
     padding-top: 12px;
     padding-bottom: 11px;

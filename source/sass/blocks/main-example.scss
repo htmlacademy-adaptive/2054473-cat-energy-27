@@ -1,0 +1,185 @@
+@use "../global/use.scss";
+
+.main-example {
+  background-color: use.$color-example;
+  padding: 0 20px;
+}
+
+.example-info-box {
+  display: block;
+
+  @include use.media-mobile-only {
+    padding-top: 25px;
+    margin-bottom: 2px;
+  }
+}
+
+.example-info-box__title {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-bold;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.example-info-box__text {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-small;
+    margin-bottom: 20px;
+  }
+}
+
+.info-box-table {
+  display: flex;
+
+  @include use.media-mobile-only {
+    flex-direction: column;
+  }
+}
+
+.info-box-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+  @include use.media-mobile-only {
+    column-gap: 32px;
+    margin-bottom: 34px;
+  }
+}
+
+.info-box-list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid use.$color-example-line;
+  border-radius: 3px;
+
+  @include use.media-mobile-only {
+    width: 122px;
+    min-height: 54px;
+  }
+}
+
+.info-box-list__title {
+  padding: 0;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-24;
+    line-height: 24px;
+    top: -1px;
+  }
+}
+
+.info-box-list__desc {
+  position: absolute;
+  margin: 0;
+  top: 85%;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: use.$color-example;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-12;
+    width: 60px;
+    padding: 0 14px;
+
+  }
+}
+
+.under-table-text {
+  margin: 0;
+  text-transform: uppercase;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-small;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+
+.example-compare-box {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+
+  @include use.media-mobile-only {
+    // margin: 0 -20px 15px;
+    min-height: 274px;
+    width: 280px;
+  }
+}
+
+.compare-box__img {
+  display: block;
+  position: absolute;
+  object-fit: cover;
+
+
+  &--fat {
+    @include use.media-mobile-only {
+      top: 0;
+      left: 0;
+      width: 140px;
+      height: 256px;
+      object-position: left;
+    }
+  }
+
+  &--thin {
+    @include use.media-mobile-only {
+      top: 0;
+      right: 0;
+      width: 140px;
+      height: 256px;
+      object-position: right;
+    }
+  }
+}
+
+
+.example-range-bar {
+  position: absolute;
+  background-color: use.$color-light-gray;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 256px;
+  width: 4px;
+  border-radius: 2px;
+}
+
+.example-range-bar__toggle {
+  position: relative;
+  border: 2px solid use.$color-light-gray;
+  border-radius: 20px;
+  background-color: use.$color-white;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/svg/toggle-range.svg");
+    width: 24px;
+    height: 18px;
+    top: 9px;
+    left: 6px;
+    cursor: pointer;
+  }
+}
