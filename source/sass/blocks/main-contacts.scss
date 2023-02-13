@@ -1,0 +1,138 @@
+@use "../global/use.scss";
+
+.main-contacts {
+  display: block;
+
+  @include use.media-mobile-only {
+    // margin-bottom: 20px;
+  }
+
+  @include use.media-desktop {
+    position: relative;
+  }
+}
+
+.contacts-adress {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: use.$color-white;
+
+  @include use.media-mobile-only {
+    padding: 26px 19px 26px 20px;
+  }
+
+  @include use.media-tablet {
+    padding: 60px 69px 59px 70px;
+  }
+
+  @include use.media-desktop {
+    width: 411px;
+    padding: 60px 75px 59px 79px;
+    position: absolute;
+    top: 95px;
+    left: 110px;
+    z-index: 1;
+  }
+}
+
+.contacts-adress__title {
+  margin: 0;
+  text-transform: uppercase;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-normal;
+    max-width: 133px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    line-height: 26px;
+    max-width: 171px;
+  }
+}
+
+.contacts-adress__text {
+  @include use.font-lato-small;
+  line-height: 20px;
+  color: use.$color-gray;
+  position: relative;
+
+  @include use.media-mobile-only {
+    width: 140px;
+  }
+
+  @include use.media-tablet {
+    width: 160px;
+    font-size: 16px;
+    text-align: right;
+    top: -4px;
+  }
+
+  @include use.media-desktop {
+    text-align: left;
+  }
+}
+
+
+.contacts-adress__wrapper {
+  display: inline-block;
+
+  @include use.media-tablet {
+    margin-bottom: 20px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 19px;
+  }
+}
+
+.contacts-map {
+  display: block;
+  position: relative;
+}
+
+.contacts-map__img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  margin: 0;
+
+
+  @include use.media-mobile-only {
+    height: 362px;
+  }
+
+  @include use.media-tablet {
+    height: 400px;
+  }
+}
+
+.contacts-map__button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  @include use.media-mobile-only {
+    width: 57px;
+    height: 53px;
+    background-image: url("../img/mob-map-pin.png");
+    top: 139px;
+    left: 42%;
+  }
+
+  @include use.media-tablet {
+    width: 113px;
+    height: 106px;
+    background-image: url("../img/tab-desk-map-pin.png");
+    top: 146px;
+    left: 43.5%;
+  }
+
+  @include use.media-desktop {
+    top: 131px;
+    left: auto;
+    right: 29.1%;
+  }
+}

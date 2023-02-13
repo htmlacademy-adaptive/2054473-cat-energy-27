@@ -225,7 +225,7 @@
   flex-direction: column;
 
   @include use.media-mobile-only {
-    min-height: 274px;
+    min-height: 296px;
     width: 280px;
     margin: 0 auto;
   }
