@@ -3,10 +3,6 @@
 .main-contacts {
   display: block;
 
-  @include use.media-mobile-only {
-    // margin-bottom: 20px;
-  }
-
   @include use.media-desktop {
     position: relative;
   }
@@ -74,7 +70,6 @@
   }
 }
 
-
 .contacts-adress__wrapper {
   display: inline-block;
 
@@ -98,7 +93,6 @@
   object-fit: cover;
   margin: 0;
 
-
   @include use.media-mobile-only {
     height: 362px;
   }
@@ -113,6 +107,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  background-color: transparent;
 
   @include use.media-mobile-only {
     width: 57px;
@@ -134,5 +129,17 @@
     top: 131px;
     left: auto;
     right: 29.1%;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 1px solid use.$color-black;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }

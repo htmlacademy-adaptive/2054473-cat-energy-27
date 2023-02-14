@@ -101,21 +101,27 @@
   height: 38px;
   width: calc(100% - 85px);
 
+  @include use.media-tablet {
+    width: auto;
+    height: auto;
+    position: relative;
+    left: 1px;
+  }
+
+  @include use.media-desktop {
+    left: 0;
+  }
+
   &:hover {
     opacity: 0.6;
   }
 
   &:focus-visible {
-    outline: 2px solid use.$color-black;
+    outline: 1px solid use.$color-black;
   }
 
   &:active {
     opacity: 0.3;
-  }
-
-  @include use.media-tablet {
-    width: auto;
-    height: auto;
   }
 }
 
@@ -144,7 +150,7 @@
   display: block;
   position: absolute;
   top: 24px;
-  left: 50.5%;
+  left: 50%;
   transform: translateX(-50%);
 
   @include use.media-tablet {
@@ -176,7 +182,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid use.$color-black;
+    outline: 1px solid use.$color-black;
   }
 
   &:active {
@@ -238,6 +244,9 @@
     border-top: 1px solid transparent;
     border-bottom: 1px solid #E6E6E6;
     background-color: use.$color-white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 
     &:first-child {
       border-top: 1px solid #E6E6E6;
@@ -262,7 +271,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid use.$color-black;
+    outline: 1px solid use.$color-black;
   }
 
   &:active {
@@ -290,9 +299,9 @@
 
   @include use.media-mobile-only {
     @include use.font-oswald-big;
-    line-height: 40px;
+    font-weight: 500;
     color: use.$color-black;
-    left: -2px;
+    left: -1px;
     margin: 12px 41px;
   }
 

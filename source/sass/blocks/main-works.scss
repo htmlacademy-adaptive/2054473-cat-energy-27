@@ -139,19 +139,19 @@
     }
 
     &:nth-child(1)::after {
-      right: 26px;
+      right: 24px;
     }
 
     &:nth-child(2)::after {
-      right: 5px;
+      right: 2px;
     }
 
     &:nth-child(3)::after {
-      right: 4px;
+      right: 1px;
     }
 
     &:nth-child(4)::after {
-      right: 2px;
+      right: -1px;
     }
   }
 }
@@ -168,5 +168,10 @@
     @include use.font-lato-normal;
     z-index: 1;
     max-width: 250px;
+  }
+
+  @include use.media-desktop {
+    left: -1px;
+    top: 1px;
   }
 }
