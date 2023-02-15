@@ -306,11 +306,11 @@
   }
 
   &:hover>.example-range-bar__toggle::before {
-    border-right: 8px solid use.$color-green;
+    border-color: transparent use.$color-green transparent transparent;
   }
 
   &:hover>.example-range-bar__toggle::after {
-    border-left: 8px solid use.$color-green;
+    border-color: transparent transparent transparent use.$color-green;
   }
 
   &:active {

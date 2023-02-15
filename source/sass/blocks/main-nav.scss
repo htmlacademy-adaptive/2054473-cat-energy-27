@@ -10,7 +10,7 @@
     min-height: 694px;
     margin-bottom: 82px;
 
-    &::before {
+    &--index::before {
       content: "";
       position: absolute;
       right: 0;
@@ -22,7 +22,7 @@
       z-index: 2;
     }
 
-    &::after {
+    &--index::after {
       content: "";
       position: absolute;
       top: -4px;
@@ -39,6 +39,14 @@
       @media (min-resolution: 2dppx) {
         background-image: url("../img/web-desk-main-cat@2x.webp");
       }
+    }
+  }
+
+  &--catalog {
+    margin: 0;
+
+    @include use.media-mobile-only {
+      border-bottom: 1px solid use.$color-program-border;
     }
   }
 }
@@ -282,18 +290,42 @@
     opacity: 0.6;
   }
 
-  &--current::before {
+  &--current {
+    @include use.media-tablet {
+      color: use.$color-black;
+      position: relative;
+      left: 2px;
+    }
+
+    @include use.media-desktop {
+      color: use.$color-white;
+      left: -2px;
+    }
+  }
+
+  &--current::before,
+  &--current--catalog::before {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: -12px;
     width: 100%;
     height: 2px;
     background-color: use.$color-green;
     transition: width 0.35s;
 
+    @include use.media-tablet {
+      bottom: -5px;
+    }
+
     @include use.media-desktop {
       background-color: use.$color-white;
+    }
+  }
+
+  &--current--catalog::before {
+    @include use.media-desktop {
+      background-color: use.$color-green;
     }
   }
 
@@ -316,17 +348,10 @@
     line-height: 36px;
     color: use.$color-white;
   }
-}
 
-.main-nav__link--current {
-  @include use.media-tablet {
-    color: use.$color-black;
-    position: relative;
-    left: 2px;
-  }
-
-  @include use.media-desktop {
-    color: use.$color-white;
-    left: -2px;
+  &--catalog {
+    @include use.media-desktop {
+      color: use.$color-black;
+    }
   }
 }

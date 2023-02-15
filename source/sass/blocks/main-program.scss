@@ -1,9 +1,5 @@
 @use "../global/use.scss";
 
-.main-block {
-  display: block;
-}
-
 .main-program {
   display: flex;
   flex-wrap: wrap;
@@ -212,7 +208,6 @@
   }
 
   &:hover::after {
-    color: red;
     width: 32px;
     height: 12px;
     background-image: url("../img/svg/arrow-active.svg");
