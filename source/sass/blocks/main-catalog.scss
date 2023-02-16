@@ -4,6 +4,14 @@
   padding: 26px 20px 0;
   display: flex;
   flex-direction: column;
+
+  @include use.media-tablet {
+    padding: 0 30px;
+  }
+
+  @include use.media-desktop {
+    padding: 0 110px;
+  }
 }
 
 .catalog-title {
@@ -13,35 +21,68 @@
     @include use.font-oswald-bold;
     margin-bottom: 41px;
   }
+
+  @include use.media-tablet {
+    @include use.font-oswald-large;
+    margin-bottom: 165px;
+  }
 }
 
 .product-box {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 
   @include use.media-mobile-only {
     flex-direction: column;
   }
+
+  @include use.media-tablet {
+    row-gap: 141px;
+    column-gap: 60px;
+  }
+
+  @include use.media-desktop {
+    row-gap: 143px;
+    column-gap: 80px;
+  }
 }
 
 .product-box__item {
   list-style: none;
+  position: relative;
 
   @include use.media-mobile-only {
     margin-right: -20px;
     margin-left: -20px;
     padding: 20px 20px 25px 20px;
     border-top: 1px solid use.$color-catalog-line;
-    position: relative;
+  }
+
+  @include use.media-tablet {
+    padding: 161px 36px 39px 38px;
+    background-color: use.$color-program;
+    flex-grow: 1;
+    min-width: 250px;
   }
 
   &:last-child {
     text-align: center;
+    position: relative;
 
     @include use.media-mobile-only {
       border-bottom: 1px solid use.$color-catalog-line;
       padding: 25px 20px 23px;
+    }
+
+    @include use.media-tablet {
+      padding: 50px 37px 37px;
+      background: #fff;
+      // border: 2px solid #F2F2F2;
+      outline: 2px solid #F2F2F2;
+      max-height: 338px;
+      top: 2px;
     }
   }
 }
@@ -54,25 +95,23 @@
   height: 112px;
   object-fit: contain;
 
+  @include use.media-tablet {
+    height: 200px;
+    align-self: center;
+    position: absolute;
+    top: -75px;
+  }
 }
 
 .product-item__img {
   position: relative;
 
-  &--xl {
-    @include use.media-mobile-only {
-      top: 3px;
-    }
+  @include use.media-mobile-only {
+    top: -2px;
   }
 
-  &--sm {
-    object-fit: none;
-
-    @include use.media-mobile-only {
-      width: 120px;
-      height: 112px;
-      object-position: 50% 78%;
-    }
+  @include use.media-tablet {
+    top: 2px;
   }
 }
 
@@ -81,6 +120,10 @@
 
   @include use.media-mobile-only {
     margin-bottom: 11px;
+  }
+
+  @include use.media-tablet {
+    flex-direction: column;
   }
 }
 
@@ -96,21 +139,42 @@
   @include use.media-mobile-only {
     margin-bottom: 14px;
   }
+
+  @include use.media-tablet {
+    max-width: 134px;
+    margin: 0 auto 19px;
+    text-align: center;
+    left: -1px;
+    position: relative;
+  }
 }
 
 .product-item__title {
   margin: 0;
   color: use.$color-catalog-product-title;
   text-transform: uppercase;
+  position: relative;
 
 
   @include use.media-mobile-only {
     @include use.font-oswald-normal;
   }
 
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    line-height: 24px;
+    left: 1px;
+  }
+
   &--more {
     @include use.media-mobile-only {
       margin-bottom: 8px;
+    }
+
+    @include use.media-tablet {
+      margin: 0 auto 22px;
+      max-width: 134px;
+      line-height: 22px;
     }
   }
 }
@@ -120,11 +184,21 @@
   border-collapse: collapse;
   border-spacing: unset;
   border: 0;
+
+  @include use.media-tablet {
+    margin-bottom: 27px;
+  }
 }
 
 .product-table__row {
   display: flex;
   justify-content: space-between;
+
+  @include use.media-tablet {
+    margin-bottom: 6px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid use.$color-example-line;
+  }
 }
 
 .product-table__cell {
@@ -133,6 +207,11 @@
 
   @include use.media-mobile-only {
     @include use.font-lato-12;
+    line-height: 16px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-lato-normal;
     line-height: 16px;
   }
 }
@@ -163,6 +242,15 @@
 
 .product-more__box {
   display: block;
+
+  @include use.media-mobile-only {
+    margin-bottom: 21px;
+  }
+
+  @include use.media-tablet {
+    margin: 0 auto 88px;
+    max-width: 167px;
+  }
 }
 
 .product-more__plus {
@@ -171,6 +259,12 @@
   cursor: pointer;
   width: 30px;
   height: 30px;
+
+  @include use.media-tablet {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 49px;
+  }
 
   &::before,
   &::after {
@@ -187,6 +281,13 @@
       top: 13px;
       left: -6px;
     }
+
+    @include use.media-tablet {
+      width: 60px;
+      height: 2px;
+      top: 29px;
+      left: -6px;
+    }
   }
 
   &::after {
@@ -195,6 +296,13 @@
       height: 30px;
       top: -3px;
       left: 8px;
+    }
+
+    @include use.media-tablet {
+      width: 2px;
+      height: 60px;
+      top: -3px;
+      left: 24px;
     }
   }
 
@@ -223,6 +331,9 @@
   @include use.media-mobile-only {
     @include use.font-lato-12;
     line-height: 16px;
-    margin-bottom: 21px;
+  }
+
+  @include use.media-tablet {
+    line-height: 18px;
   }
 }

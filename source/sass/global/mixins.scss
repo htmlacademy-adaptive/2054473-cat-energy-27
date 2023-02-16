@@ -92,7 +92,7 @@
 }
 
 @mixin media-middle {
-  @media (min-width: 1050px) {
+  @media (min-width: 769px) {
     @content;
   }
 }
