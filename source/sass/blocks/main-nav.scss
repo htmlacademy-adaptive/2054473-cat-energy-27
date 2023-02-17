@@ -109,6 +109,11 @@
   }
 
   &--catalog {
+
+    @include use.media-tablet {
+      margin-bottom: 64px;
+    }
+
     @include use.media-desktop {
       margin-bottom: 75px;
     }

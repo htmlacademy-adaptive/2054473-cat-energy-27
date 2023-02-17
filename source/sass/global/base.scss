@@ -47,3 +47,9 @@ img {
     height: 100%;
   }
 }
+
+.mobile-hidden {
+  @include mixins.media-mobile-only {
+    display: none;
+  }
+}

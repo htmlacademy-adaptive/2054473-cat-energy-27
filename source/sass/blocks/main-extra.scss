@@ -1,0 +1,104 @@
+@use "../global/use.scss";
+
+.main-extra {
+  display: block;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: calc(100% - 267px);
+    top: 15px;
+    right: 0;
+    background-color: use.$color-green;
+  }
+
+  @include use.media-mobile-only {
+    padding: 0 20px;
+  }
+}
+
+.main-extra__title {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-24;
+    line-height: 24px;
+    margin-bottom: 35px;
+  }
+}
+
+.extra-box {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.extra-box__item {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: 1px solid use.$color-example-line;
+    margin: 0;
+    padding-bottom: 17px;
+  }
+
+  @include use.media-mobile-only {
+    border-top: 1px solid use.$color-example-line;
+    padding-top: 13px;
+    margin-bottom: 18px;
+  }
+}
+
+.extra-item__link {
+  display: block;
+
+  @include use.media-mobile-only {
+    margin-bottom: 13px;
+  }
+}
+
+.extra-item__title {
+  margin: 0;
+  text-transform: uppercase;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-normal;
+    line-height: 16px;
+  }
+}
+
+.extra-box__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include use.media-mobile-only {
+    margin-bottom: 15px;
+  }
+}
+
+.extra-box__text,
+.extra-box__price {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-small;
+    line-height: 14px;
+  }
+}
+
+.extra-box__text {
+
+  &--position {
+    @include use.media-mobile-only {
+      position: relative;
+      left: 1px;
+    }
+  }
+}
