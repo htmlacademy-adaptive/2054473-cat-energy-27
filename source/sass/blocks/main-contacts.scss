@@ -30,6 +30,14 @@
     left: 110px;
     z-index: 1;
   }
+
+  &--catalog {
+    background-color: use.$color-program;
+
+    @include use.media-desktop {
+      background-color: use.$color-white;
+    }
+  }
 }
 
 .contacts-adress__title {

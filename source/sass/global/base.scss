@@ -53,3 +53,11 @@ img {
     display: none;
   }
 }
+
+.desktop-visible {
+  display: none;
+
+  @include mixins.media-desktop {
+    display: block;
+  }
+}
