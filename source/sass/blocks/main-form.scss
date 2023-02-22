@@ -1,0 +1,92 @@
+@use "../global/use.scss";
+
+.main-form-box {
+  padding: 26px 20px;
+}
+
+.main-form-box__title {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-bold;
+    margin-bottom: 38px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-large;
+    margin-bottom: 163px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 165px;
+  }
+}
+
+.main-form-box__text {
+  text-transform: uppercase;
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-small;
+  }
+}
+
+.main-form {
+  text-transform: uppercase;
+  color: use.$color-gray;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-normal;
+    line-height: 18px;
+  }
+}
+
+
+.main-form__fieldset {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  @include use.media-mobile-only {
+    flex-direction: column;
+  }
+}
+
+.form-box {
+  display: block;
+}
+
+.form-box__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include use.media-mobile-only {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+
+  }
+}
+
+.form-box__item {
+  display: flex;
+  align-items: center;
+
+  @include use.media-mobile-only {
+    column-gap: 13px;
+  }
+}
+
+.form-box__label {
+  cursor: pointer;
+  flex-basis: max-content;
+}
+
+.form-box__input-text {
+  padding: 12px 15px 13px;
+  flex-grow: 1;
+  border: 1px solid #e7e7e7;
+  text-transform: uppercase;
+}
