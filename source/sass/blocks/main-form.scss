@@ -61,12 +61,25 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
+
+  &::after {
+    @include use.media-mobile-only {
+      content: "";
+      position: absolute;
+      width: calc(100% - -42px);
+      height: 1px;
+      background-color: use.$color-program-border;
+      bottom: 0;
+      left: -20px;
+    }
+  }
 
   @include use.media-mobile-only {
     display: flex;
     flex-direction: column;
     row-gap: 14px;
-
+    padding-bottom: 24px;
   }
 }
 
@@ -81,12 +94,20 @@
 
 .form-box__label {
   cursor: pointer;
-  flex-basis: max-content;
 }
 
 .form-box__input-text {
-  padding: 12px 15px 13px;
+  width: 1px;
   flex-grow: 1;
   border: 1px solid #e7e7e7;
   text-transform: uppercase;
+  box-sizing: border-box;
+  color: use.$color-input-border;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-normal;
+    line-height: 18px;
+    padding: 12px 15px 13px;
+  }
+
 }
