@@ -28,6 +28,7 @@
 
   @include use.media-mobile-only {
     @include use.font-oswald-small;
+    margin-bottom: 38px;
   }
 }
 
@@ -41,15 +42,33 @@
   }
 }
 
-
 .main-form__fieldset {
   display: flex;
   margin: 0;
   padding: 0;
   border: 0;
+  position: relative;
 
   @include use.media-mobile-only {
     flex-direction: column;
+  }
+
+  &--first {
+    @include use.media-mobile-only {
+      margin-bottom: 26px;
+    }
+  }
+
+  &--contact {
+    @include use.media-mobile-only {
+      margin-bottom: 24px;
+    }
+  }
+
+  &--comment {
+    @include use.media-mobile-only {
+      margin-bottom: 23px;
+    }
   }
 }
 
@@ -63,7 +82,7 @@
   padding: 0;
   position: relative;
 
-  &::after {
+  &--border::after {
     @include use.media-mobile-only {
       content: "";
       position: absolute;
@@ -71,7 +90,13 @@
       height: 1px;
       background-color: use.$color-program-border;
       bottom: 0;
-      left: -20px;
+      left: -22px;
+    }
+  }
+
+  &--text-group {
+    @include use.media-mobile-only {
+      margin-bottom: 29px;
     }
   }
 
@@ -80,6 +105,18 @@
     flex-direction: column;
     row-gap: 14px;
     padding-bottom: 24px;
+  }
+
+  &--radio-group {
+    @include use.media-mobile-only {
+      row-gap: 25px;
+    }
+  }
+
+  &--contact-group {
+    @include use.media-mobile-only {
+      padding: 0;
+    }
   }
 }
 
@@ -90,16 +127,41 @@
   @include use.media-mobile-only {
     column-gap: 13px;
   }
+
+  &--contact {
+    @include use.media-mobile-only {
+      column-gap: 11px;
+    }
+  }
 }
 
 .form-box__label {
   cursor: pointer;
+
+  &--radio {
+    position: relative;
+    margin-right: 0;
+    padding-left: 45px;
+    color: use.$color-label;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border: 1px solid use.$color-program-border;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+  }
 }
 
 .form-box__input-text {
   width: 1px;
   flex-grow: 1;
-  border: 1px solid #e7e7e7;
+  border: 1px solid use.$color-input-border;
   text-transform: uppercase;
   box-sizing: border-box;
   color: use.$color-input-border;
@@ -107,7 +169,116 @@
   @include use.media-mobile-only {
     @include use.font-oswald-normal;
     line-height: 18px;
-    padding: 12px 15px 13px;
+    padding: 13px 20px 12px;
   }
 
+  &--mail {
+    border-color: use.$color-example-line;
+    color: use.$color-gray;
+
+    @include use.media-mobile-only {
+      padding: 13.5px 40px 11px 13px;
+    }
+  }
+
+  &--phone {
+    border-color: use.$color-example-line;
+    color: use.$color-gray;
+
+    @include use.media-mobile-only {
+      padding: 15px 40px 10px 15px;
+    }
+  }
+}
+
+.form-box__input-radio:checked+.form-box__label--radio::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  width: 14px;
+  height: 14px;
+  background-color: use.$color-green;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+
+.form-box__input-radio:focus+.form-box__label--radio::before,
+.form-box__label--radio:hover::before {
+  border-color: use.$color-radio-hover;
+}
+
+.form__legend {
+  margin: 0;
+  padding: 0;
+  color: use.$color-black;
+  text-transform: none;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-24;
+    line-height: 26px;
+    margin-bottom: 35px;
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: 16px;
+    right: -20px;
+    background-color: use.$color-green;
+  }
+
+  &--contact::after {
+    @include use.media-mobile-only {
+      width: calc(100% - 181px);
+    }
+  }
+
+  &--comment {
+    @include use.media-mobile-only {
+      margin-bottom: 38px;
+    }
+  }
+
+  &--comment::after {
+    @include use.media-mobile-only {
+      top: 15px;
+      width: calc(100% - 123px);
+    }
+  }
+
+  &--extra::after {
+    @include use.media-mobile-only {
+      top: 15px;
+      width: calc(100% - 144px);
+    }
+  }
+}
+
+.form-box__icon-mail {
+  position: absolute;
+  right: 16px;
+}
+
+.form-box__icon-phone {
+  position: absolute;
+  right: 17px;
+}
+
+.form__textarea {
+  padding: 9px 14px;
+  min-height: 150px;
+  border: 1px solid use.$color-input-border;
+  text-transform: uppercase;
+  resize: none;
+  outline: 0;
+  box-sizing: border-box;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-normal;
+    line-height: 18px;
+  }
 }
