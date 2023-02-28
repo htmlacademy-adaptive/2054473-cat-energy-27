@@ -8,8 +8,8 @@
   }
 
   @include use.media-tablet {
-    padding: 0 67px 0 70px;
-    margin-bottom: 31px;
+    padding: 0 66px 0 71px;
+    margin-bottom: 72px;
   }
 }
 
@@ -95,6 +95,20 @@
     @include use.media-mobile-only {
       margin-bottom: 23px;
     }
+
+    @include use.media-tablet {
+      margin-bottom: 65px;
+    }
+  }
+
+  &--checkbox {
+    @include use.media-mobile-only {
+      margin-bottom: 16px;
+    }
+
+    @include use.media-tablet {
+      margin-bottom: 58px;
+    }
   }
 }
 
@@ -162,7 +176,13 @@
   &--extra {
     @include use.media-mobile-only {
       row-gap: 24.5px;
-      margin-bottom: 16px;
+    }
+
+    @include use.media-tablet {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      row-gap: 42px;
     }
   }
 }
@@ -183,6 +203,12 @@
 
     @include use.media-tablet {
       column-gap: 22px;
+    }
+  }
+
+  &--checkbox {
+    @include use.media-tablet {
+      min-width: 287px;
     }
   }
 }
@@ -230,6 +256,10 @@
     position: relative;
     margin: 0;
     padding-left: 46px;
+
+    @include use.media-tablet {
+      padding-left: 60px;
+    }
   }
 }
 
@@ -358,10 +388,18 @@
       margin-bottom: 38px;
     }
 
+    @include use.media-tablet {
+      margin-bottom: 76px;
+    }
+
     &::after {
       @include use.media-mobile-only {
         top: 15px;
         width: calc(100% - 123px);
+      }
+
+      @include use.media-tablet {
+        width: calc(100% - 151px);
       }
     }
   }
@@ -372,10 +410,18 @@
       margin-bottom: 40px;
     }
 
+    @include use.media-tablet {
+      margin-bottom: 63px;
+    }
+
     &::after {
       @include use.media-mobile-only {
         top: 15px;
         width: calc(100% - 144px);
+      }
+
+      @include use.media-tablet {
+        width: calc(100% - 184px);
       }
     }
   }
@@ -400,8 +446,6 @@
 }
 
 .form__textarea {
-  padding: 9px 14px;
-  min-height: 150px;
   border: 1px solid use.$color-input-border;
   text-transform: uppercase;
   resize: none;
@@ -411,6 +455,14 @@
   @include use.media-mobile-only {
     @include use.font-oswald-normal;
     line-height: 18px;
+    padding: 9px 14px;
+    min-height: 150px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    min-height: 174px;
+    padding: 14px 19px;
   }
 }
 
@@ -426,6 +478,11 @@
   height: 30px;
   border: 1px solid #d9d9d9;
   box-sizing: border-box;
+
+  @include use.media-tablet {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .form-box__input-checkbox:checked+.form-box__label--checkbox::after {
@@ -443,28 +500,49 @@
   }
 
   @include use.media-tablet {
+    top: 5px;
+    left: 8px;
+    width: 24px;
+    height: 19px;
     background-image: url(../img/svg/tab-checkbox.svg);
   }
 }
 
 .form__btn {
-  width: 100%;
+  position: relative;
 
   @include use.media-mobile-only {
     @include use.font-oswald-normal;
     padding-top: 11px;
     padding-bottom: 9px;
     margin-bottom: 20px;
+    width: 100%;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    line-height: 30px;
+    padding: 11px 65px;
+    display: inline-block;
+    left: 2px;
+    margin-right: 61px;
   }
 }
 
 .form__btn-text {
-  display: block;
   text-transform: none;
   text-align: center;
   position: relative;
 
   @include use.media-mobile-only {
     @include use.font-lato-small;
+    display: block;
+  }
+
+  @include use.media-tablet {
+    @include use.font-lato-normal;
+    line-height: 16px;
+    display: inline-block;
+    top: -6px;
   }
 }
