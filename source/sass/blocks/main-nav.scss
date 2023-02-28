@@ -264,6 +264,12 @@
       column-gap: 35px;
     }
   }
+
+  &--form {
+    @include use.media-tablet {
+      column-gap: 34px;
+    }
+  }
 }
 
 .main-nav__item {
@@ -319,7 +325,6 @@
   &--current {
     @include use.media-tablet {
       color: use.$color-black;
-      position: relative;
       left: 2px;
     }
 

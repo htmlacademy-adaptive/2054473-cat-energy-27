@@ -9,8 +9,8 @@
   <link rel="icon" href="/img/svg/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/img/favicon/favicon-180.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preload" href="/fonts/Lato-Regular.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="/fonts/Oswaldregular.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="/fonts/Oswaldregular.woff2" as="font" type="font/woff2" crossOrigin="anonymous">
+  <link rel="preload" href="/fonts/Oswaldmedium.woff2" as="font" type="font/woff2" crossOrigin="anonymous">
   <link rel="stylesheet" href="/css/style.min.css">
 </head>
 
@@ -32,7 +32,7 @@
       </button>
 
       <div class="main-nav__wrapper">
-        <ul class="main-nav__list main-nav__list--catalog">
+        <ul class="main-nav__list main-nav__list--form">
           <li class="main-nav__item">
             <a class="main-nav__link main-nav__link--catalog" href="index.html">Главная</a>
           </li>
@@ -41,7 +41,7 @@
               продукции</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link main-nav__link--catalog main-nav__link--current--catalog" href="#">Подбор
+            <a class="main-nav__link main-nav__link--catalog main-nav__link--current" href="#">Подбор
               программы</a>
           </li>
         </ul>
@@ -54,8 +54,8 @@
       <h1 class="main-form-box__title">Подбор программы</h1>
       <p class="main-form-box__text">Заполните анкету, и мы подберем<br> программу питания для вашего кота</p>
 
-      <form class="main-form" action="https://echo.htmlacademy.ru" method="POST" target="_blank">
-        <fieldset class="main-form__fieldset main-form__fieldset--first">
+      <form class="form" action="https://echo.htmlacademy.ru" method="POST" target="_blank">
+        <fieldset class="form__fieldset form__fieldset--first">
           <legend class="visually-hidden">Данные кота.</legend>
 
           <!-- <div class="form-box form-box--text-group"> -->
@@ -96,8 +96,8 @@
 
 
 
-        <fieldset class="main-form__fieldset main-form__fieldset--contact">
-          <legend class="form__legend form__legend--contact">Контактные данные<br>(владельца кота)</legend>
+        <fieldset class="form__fieldset form__fieldset--contact">
+          <legend class="form__legend form__legend--contact">Контактные данные<br>&nbsp;(владельца кота)</legend>
           <!-- <div class="container wrapper"> -->
           <ul class="form-box__list form-box__list--contact-group">
             <li class="form-box__item form-box__item--contact"><label class="form-box__label form-box__label--email"
@@ -117,33 +117,34 @@
           </ul>
           <!-- </div> -->
         </fieldset>
-        <fieldset class="main-form__fieldset main-form__fieldset--comment">
+        <fieldset class="form__fieldset form__fieldset--comment">
           <legend class="form__legend form__legend--comment">Комментарий</legend>
           <textarea class="form__textarea" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
         </fieldset>
 
 
-        <fieldset class="main-form__fieldset form__fieldset--checkbox">
+        <fieldset class="form__fieldset form__fieldset--checkbox">
           <legend class="form__legend form__legend--extra">Дополнительно</legend>
 
-          <ul class="form__list form__list--extra">
-            <li class="form__item form__item--checkbox"><input class="form__input-checkbox visually-hidden"
+          <ul class="form-box__list form-box__list--extra">
+            <li class="form-box__item form-box__item--checkbox"><input class="form-box__input-checkbox visually-hidden"
                 type="checkbox" name="extra" id="checkbox-1" value="sweetener" checked="checked"> <label
-                class="form__label form__label--checkbox" for="checkbox-1">Сахарозаменитель</label></li>
-            <li class="form__item form__item--checkbox"><input class="form__input-checkbox visually-hidden"
+                class="form-box__label form-box__label--checkbox" for="checkbox-1">Сахарозаменитель</label></li>
+            <li class="form-box__item form-box__item--checkbox"><input class="form-box__input-checkbox visually-hidden"
                 type="checkbox" name="extra" id="checkbox-2" value="water"> <label
-                class="form__label form__label--checkbox" for="checkbox-2">Питьевая вода</label></li>
-            <li class="form__item form__item--checkbox"><input class="form__input-checkbox visually-hidden"
+                class="form-box__label form-box__label--checkbox" for="checkbox-2">Питьевая вода</label></li>
+            <li class="form-box__item form-box__item--checkbox"><input class="form-box__input-checkbox visually-hidden"
                 type="checkbox" name="extra" id="checkbox-3" value="milk"> <label
-                class="form__label form__label--checkbox" for="checkbox-3">Молоко</label></li>
-            <li class="form__item form__item--checkbox"><input class="form__input-checkbox visually-hidden"
+                class="form-box__label form-box__label--checkbox" for="checkbox-3">Молоко</label></li>
+            <li class="form-box__item form-box__item--checkbox"><input class="form-box__input-checkbox visually-hidden"
                 type="checkbox" name="extra" id="checkbox-4" value="vitamins"> <label
-                class="form__label form__label--checkbox" for="checkbox-4">Витамины</label></li>
+                class="form-box__label form-box__label--checkbox" for="checkbox-4">Витамины</label></li>
           </ul>
         </fieldset>
-        <!--   <div class="form__footer"><button class="form__btn btn" type="submit">Отправить заявку</button>
-          <p class="form__text">* — Обязательные поля</p>
-        </div> -->
+
+        <button class="form__btn btn" type="submit">Отправить заявку</button>
+        <span class="form__btn-text">* – &nbsp;Обязательные поля</span>
+
       </form>
 
     </section>

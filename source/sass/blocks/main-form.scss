@@ -1,7 +1,16 @@
 @use "../global/use.scss";
 
 .main-form-box {
-  padding: 26px 20px;
+
+  @include use.media-mobile-only {
+    padding: 26px 20px 0;
+    margin-bottom: 31px;
+  }
+
+  @include use.media-tablet {
+    padding: 0 67px 0 70px;
+    margin-bottom: 31px;
+  }
 }
 
 .main-form-box__title {
@@ -14,11 +23,11 @@
 
   @include use.media-tablet {
     @include use.font-oswald-large;
-    margin-bottom: 163px;
+    margin-bottom: 54px;
   }
 
   @include use.media-desktop {
-    margin-bottom: 165px;
+    margin-bottom: 56px;
   }
 }
 
@@ -30,9 +39,15 @@
     @include use.font-oswald-small;
     margin-bottom: 38px;
   }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    line-height: 30px;
+    margin-bottom: 66px;
+  }
 }
 
-.main-form {
+.form {
   text-transform: uppercase;
   color: use.$color-gray;
 
@@ -40,28 +55,39 @@
     @include use.font-oswald-normal;
     line-height: 18px;
   }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    line-height: 30px;
+  }
+
 }
 
-.main-form__fieldset {
+.form__fieldset {
   display: flex;
   margin: 0;
   padding: 0;
   border: 0;
   position: relative;
-
-  @include use.media-mobile-only {
-    flex-direction: column;
-  }
+  flex-direction: column;
 
   &--first {
     @include use.media-mobile-only {
       margin-bottom: 26px;
+    }
+
+    @include use.media-tablet {
+      margin-bottom: 75px;
     }
   }
 
   &--contact {
     @include use.media-mobile-only {
       margin-bottom: 24px;
+    }
+
+    @include use.media-tablet {
+      margin-bottom: 65px;
     }
   }
 
@@ -77,10 +103,21 @@
 }
 
 .form-box__list {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
   position: relative;
+
+  @include use.media-mobile-only {
+    row-gap: 14px;
+    padding-bottom: 24px;
+  }
+
+  @include use.media-tablet {
+    row-gap: 20px;
+  }
 
   &--border::after {
     @include use.media-mobile-only {
@@ -98,18 +135,21 @@
     @include use.media-mobile-only {
       margin-bottom: 29px;
     }
-  }
 
-  @include use.media-mobile-only {
-    display: flex;
-    flex-direction: column;
-    row-gap: 14px;
-    padding-bottom: 24px;
+    @include use.media-tablet {
+      margin-bottom: 72px;
+    }
   }
 
   &--radio-group {
     @include use.media-mobile-only {
       row-gap: 25px;
+    }
+
+    @include use.media-tablet {
+      border: 1px solid use.$color-input-border;
+      padding: 30px 28px 28px;
+      row-gap: 23px;
     }
   }
 
@@ -118,19 +158,31 @@
       padding: 0;
     }
   }
+
+  &--extra {
+    @include use.media-mobile-only {
+      row-gap: 24.5px;
+      margin-bottom: 16px;
+    }
+  }
 }
 
 .form-box__item {
   display: flex;
   align-items: center;
+  column-gap: 13px;
 
-  @include use.media-mobile-only {
-    column-gap: 13px;
+  @include use.media-tablet {
+    column-gap: 15px;
   }
 
   &--contact {
     @include use.media-mobile-only {
       column-gap: 11px;
+    }
+
+    @include use.media-tablet {
+      column-gap: 22px;
     }
   }
 }
@@ -144,6 +196,10 @@
     padding-left: 45px;
     color: use.$color-label;
 
+    @include use.media-tablet {
+      padding-left: 60px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -154,7 +210,26 @@
       border: 1px solid use.$color-program-border;
       border-radius: 50%;
       box-sizing: border-box;
+
+      @include use.media-tablet {
+        width: 40px;
+        height: 40px;
+      }
     }
+  }
+
+  &--tel {
+    position: relative;
+
+    @include use.media-tablet {
+      left: -1px;
+    }
+  }
+
+  &--checkbox {
+    position: relative;
+    margin: 0;
+    padding-left: 46px;
   }
 }
 
@@ -170,6 +245,12 @@
     @include use.font-oswald-normal;
     line-height: 18px;
     padding: 13px 20px 12px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    line-height: 30px;
+    padding: 10px 18px;
   }
 
   &--mail {
@@ -201,6 +282,13 @@
   background-color: use.$color-green;
   border-radius: 50%;
   box-sizing: border-box;
+
+  @include use.media-tablet {
+    top: 5px;
+    left: 11px;
+    width: 18px;
+    height: 18px;
+  }
 }
 
 
@@ -214,12 +302,23 @@
   padding: 0;
   color: use.$color-black;
   text-transform: none;
+  position: relative;
+  width: 100%;
 
   @include use.media-mobile-only {
     @include use.font-oswald-24;
     line-height: 26px;
     margin-bottom: 35px;
-    width: 100%;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-bold;
+  }
+
+  & br {
+    @include use.media-tablet {
+      display: none;
+    }
   }
 
   &::after {
@@ -229,11 +328,28 @@
     top: 16px;
     right: -20px;
     background-color: use.$color-green;
+
+    @include use.media-tablet {
+      top: 22px;
+      right: -68px;
+    }
   }
 
-  &--contact::after {
-    @include use.media-mobile-only {
-      width: calc(100% - 181px);
+  &--contact {
+
+    @include use.media-tablet {
+      margin-bottom: 76px;
+      left: -1px;
+    }
+
+    &::after {
+      @include use.media-mobile-only {
+        width: calc(100% - 181px);
+      }
+
+      @include use.media-tablet {
+        width: calc(100% - 486px);
+      }
     }
   }
 
@@ -241,19 +357,26 @@
     @include use.media-mobile-only {
       margin-bottom: 38px;
     }
-  }
 
-  &--comment::after {
-    @include use.media-mobile-only {
-      top: 15px;
-      width: calc(100% - 123px);
+    &::after {
+      @include use.media-mobile-only {
+        top: 15px;
+        width: calc(100% - 123px);
+      }
     }
   }
 
-  &--extra::after {
+
+  &--extra {
     @include use.media-mobile-only {
-      top: 15px;
-      width: calc(100% - 144px);
+      margin-bottom: 40px;
+    }
+
+    &::after {
+      @include use.media-mobile-only {
+        top: 15px;
+        width: calc(100% - 144px);
+      }
     }
   }
 }
@@ -261,11 +384,19 @@
 .form-box__icon-mail {
   position: absolute;
   right: 16px;
+
+  @include use.media-tablet {
+    right: 18px;
+  }
 }
 
 .form-box__icon-phone {
   position: absolute;
   right: 17px;
+
+  @include use.media-tablet {
+    right: 19px;
+  }
 }
 
 .form__textarea {
@@ -280,5 +411,60 @@
   @include use.media-mobile-only {
     @include use.font-oswald-normal;
     line-height: 18px;
+  }
+}
+
+
+
+
+.form-box__input-checkbox+.form-box__label--checkbox::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+.form-box__input-checkbox:checked+.form-box__label--checkbox::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+
+  @include use.media-mobile-only {
+    top: 2px;
+    left: 6px;
+    width: 19px;
+    height: 15px;
+    background-image: url(../img/svg/mob-checkbox.svg);
+  }
+
+  @include use.media-tablet {
+    background-image: url(../img/svg/tab-checkbox.svg);
+  }
+}
+
+.form__btn {
+  width: 100%;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-normal;
+    padding-top: 11px;
+    padding-bottom: 9px;
+    margin-bottom: 20px;
+  }
+}
+
+.form__btn-text {
+  display: block;
+  text-transform: none;
+  text-align: center;
+  position: relative;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-small;
   }
 }
