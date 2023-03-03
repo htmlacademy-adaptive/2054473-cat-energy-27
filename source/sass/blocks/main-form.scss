@@ -414,6 +414,23 @@
     }
   }
 
+  &::before {
+    @include use.media-tablet {
+      content: "";
+      position: absolute;
+      height: 2px;
+      top: 22px;
+      left: -70px;
+      background-color: use.$color-green;
+      width: 30px;
+    }
+
+    @include use.media-desktop {
+      left: -107px;
+      width: 66px;
+    }
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -445,7 +462,7 @@
       }
 
       @include use.media-tablet {
-        width: calc(100% - 486px);
+        width: calc(100% - 442px);
       }
     }
   }
