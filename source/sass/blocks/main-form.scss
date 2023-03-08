@@ -332,7 +332,8 @@
   border: 1px solid use.$color-input-border;
   text-transform: uppercase;
   box-sizing: border-box;
-  color: use.$color-input-border;
+  color: use.$color-gray;
+  outline: none;
 
   @include use.media-mobile-only {
     @include use.font-oswald-normal;
@@ -347,28 +348,48 @@
   }
 
   &--mail {
-    border-color: use.$color-example-line;
-    color: use.$color-gray;
-
     @include use.media-mobile-only {
       padding: 13.5px 40px 11px 13px;
     }
   }
 
   &--phone {
-    border-color: use.$color-example-line;
-    color: use.$color-gray;
-
     @include use.media-mobile-only {
       padding: 15px 40px 10px 15px;
     }
+  }
+
+  &:hover {
+    border-color: use.$color-example-line;
+  }
+
+  &:focus {
+    border: 1px solid use.$color-gray;
+    box-shadow: inset 1px 1px 0px use.$color-gray,
+      inset -1px -1px 0px use.$color-gray;
+  }
+
+  &:focus+.form-box__icon-mail,
+  &:focus+.form-box__icon-phone {
+    stroke: use.$color-green;
+  }
+
+  &:invalid:focus:not(:placeholder-shown) {
+    border: 1px solid use.$color-error;
+    box-shadow: inset 1px 1px 0px use.$color-error,
+      inset -1px -1px 0px use.$color-error;
+  }
+
+  &:invalid:focus:not(:placeholder-shown)+.form-box__icon-phone,
+  &:invalid:focus:not(:placeholder-shown)+.form-box__icon-mail {
+    stroke: use.$color-error;
   }
 }
 
 .form-box__input-radio:checked+.form-box__label--radio::after {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 8px;
   width: 14px;
   height: 14px;
@@ -388,6 +409,11 @@
 .form-box__input-radio:focus+.form-box__label--radio::before,
 .form-box__label--radio:hover::before {
   border-color: use.$color-radio-hover;
+}
+
+.form-box__input-radio:disabled,
+.form-box__input-radio:disabled+.form-box__label--radio {
+  opacity: 0.3;
 }
 
 .form__legend {
@@ -462,6 +488,10 @@
       }
 
       @include use.media-tablet {
+        width: calc(100% - 487px);
+      }
+
+      @include use.media-desktop {
         width: calc(100% - 442px);
       }
     }
@@ -523,6 +553,7 @@
 .form-box__icon-mail {
   position: absolute;
   right: 16px;
+  stroke: use.$color-black;
 
   @include use.media-tablet {
     right: 18px;
@@ -536,6 +567,7 @@
 .form-box__icon-phone {
   position: absolute;
   right: 17px;
+  stroke: use.$color-black;
 
   @include use.media-tablet {
     right: 19px;
@@ -569,10 +601,17 @@
   @include use.media-desktop {
     padding: 15px 17px;
   }
+
+  &:hover {
+    border-color: use.$color-example-line;
+  }
+
+  &:focus {
+    border: 1px solid use.$color-gray;
+    box-shadow: inset 1px 1px 0px use.$color-gray,
+      inset -1px -1px 0px use.$color-gray;
+  }
 }
-
-
-
 
 .form-box__input-checkbox+.form-box__label--checkbox::before {
   content: "";
@@ -611,6 +650,16 @@
     height: 19px;
     background-image: url(../img/svg/tab-checkbox.svg);
   }
+}
+
+.form-box__input-checkbox:focus+.form-box__label--checkbox::before,
+.form-box__label--checkbox:hover::before {
+  border-color: use.$color-radio-hover;
+}
+
+.form-box__input-checkbox:disabled,
+.form-box__input-checkbox:disabled+.form-box__label--checkbox {
+  opacity: 0.3;
 }
 
 .form__btn {

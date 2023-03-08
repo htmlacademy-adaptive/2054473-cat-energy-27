@@ -93,13 +93,40 @@
 .contacts-map {
   display: block;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include use.media-mobile-only {
+    background-image: url("../img/web-mob-map.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/web-mob-map@2x.jpg");
+    }
+  }
+
+  @include use.media-tablet {
+    height: 400px;
+    background-image: url("../img/web-tab-map.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/web-tab-map@2x.jpg");
+    }
+  }
+
+  @include use.media-desktop {
+    height: 400px;
+    background-image: url("../img/web-desk-map.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/web-desk-map@2x.jpg");
+    }
+  }
 }
 
-.contacts-map__img {
+.map {
+  border: 0;
   display: block;
-  width: 100%;
-  object-fit: cover;
-  margin: 0;
 
   @include use.media-mobile-only {
     height: 362px;
@@ -107,47 +134,5 @@
 
   @include use.media-tablet {
     height: 400px;
-  }
-}
-
-.contacts-map__button {
-  position: absolute;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  background-color: transparent;
-
-  @include use.media-mobile-only {
-    width: 57px;
-    height: 53px;
-    background-image: url("../img/mob-map-pin.png");
-    top: 139px;
-    left: 42%;
-  }
-
-  @include use.media-tablet {
-    width: 113px;
-    height: 106px;
-    background-image: url("../img/tab-desk-map-pin.png");
-    top: 146px;
-    left: 43.5%;
-  }
-
-  @include use.media-desktop {
-    top: 131px;
-    left: auto;
-    right: 29.1%;
-  }
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:focus-visible {
-    outline: 1px solid use.$color-black;
-  }
-
-  &:active {
-    opacity: 0.3;
   }
 }
