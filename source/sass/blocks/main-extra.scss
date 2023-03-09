@@ -189,6 +189,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
   @include use.media-mobile-only {
     margin-bottom: 15px;
@@ -215,6 +216,7 @@
   @include use.media-mobile-only {
     @include use.font-lato-small;
     line-height: 14px;
+    max-width: 115px;
   }
 
   @include use.media-tablet {
@@ -248,7 +250,7 @@
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: cover;
-  background-color: #444;
+  background-color: use.$color-gray;
 
   @include use.media-mobile-only {
     background-image: linear-gradient(to right, rgba(104, 183, 56, .85) 0%, rgba(104, 183, 56, .85) 100%), url("../img/web-mob-extra-cat.webp");

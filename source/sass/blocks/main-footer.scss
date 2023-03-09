@@ -80,7 +80,7 @@
     flex-direction: row;
     justify-content: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid #D9D9D9;
+    border-bottom: 1px solid use.$color-program-border;
     margin-bottom: 20px;
     width: 100%;
     column-gap: 12px;
@@ -89,6 +89,7 @@
   @include use.media-tablet {
     column-gap: 12px;
     left: 12px;
+    max-width: 300px;
   }
 
   @include use.media-desktop {
@@ -157,6 +158,7 @@
 
 .footer-created__text {
   position: relative;
+  max-width: 113px;
 
   @include use.media-mobile-only {
     @include use.font-lato-normal;

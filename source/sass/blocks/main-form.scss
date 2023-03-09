@@ -1,14 +1,13 @@
 @use "../global/use.scss";
 
 .main-form-box {
-
   @include use.media-mobile-only {
     padding: 26px 20px 0;
     margin-bottom: 31px;
   }
 
   @include use.media-tablet {
-    padding: 0 66px 0 71px;
+    padding: 0 66px 0 70px;
     margin-bottom: 72px;
   }
 
@@ -20,6 +19,7 @@
 
 .main-form-box__title {
   margin: 0;
+  position: relative;
 
   @include use.media-mobile-only {
     @include use.font-oswald-bold;
@@ -29,6 +29,7 @@
   @include use.media-tablet {
     @include use.font-oswald-large;
     margin-bottom: 54px;
+    left: -2px;
   }
 
   @include use.media-desktop {
@@ -69,7 +70,6 @@
     @include use.font-oswald-big;
     line-height: 30px;
   }
-
 }
 
 .form__fieldset {
@@ -145,6 +145,7 @@
 .form-box__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -211,6 +212,7 @@
     @include use.media-desktop {
       flex-direction: row;
       column-gap: 78px;
+      flex-wrap: wrap;
     }
   }
 
@@ -282,7 +284,7 @@
     color: use.$color-label;
 
     @include use.media-tablet {
-      padding-left: 60px;
+      padding-left: 59px;
     }
 
     @include use.media-desktop {
@@ -311,7 +313,11 @@
     position: relative;
 
     @include use.media-tablet {
-      left: -1px;
+      left: -3px;
+    }
+
+    @include use.media-desktop {
+      left: 0;
     }
   }
 
@@ -357,6 +363,15 @@
     @include use.media-mobile-only {
       padding: 15px 40px 10px 15px;
     }
+
+    @include use.media-tablet {
+      padding: 10px 40px 10px 16px;
+    }
+
+    @include use.media-desktop {
+      padding: 12px 40px 10px 19px;
+    }
+
   }
 
   &:hover {
@@ -404,7 +419,6 @@
     height: 18px;
   }
 }
-
 
 .form-box__input-radio:focus+.form-box__label--radio::before,
 .form-box__label--radio:hover::before {
@@ -467,7 +481,7 @@
 
     @include use.media-tablet {
       top: 22px;
-      right: -68px;
+      right: -66px;
     }
 
     @include use.media-desktop {
@@ -476,7 +490,6 @@
   }
 
   &--contact {
-
     @include use.media-tablet {
       margin-bottom: 76px;
       left: -1px;
@@ -498,6 +511,8 @@
   }
 
   &--comment {
+    position: relative;
+
     @include use.media-mobile-only {
       margin-bottom: 38px;
     }
@@ -521,7 +536,6 @@
       }
     }
   }
-
 
   &--extra {
     @include use.media-mobile-only {
@@ -608,8 +622,7 @@
 
   &:focus {
     border: 1px solid use.$color-gray;
-    box-shadow: inset 1px 1px 0px use.$color-gray,
-      inset -1px -1px 0px use.$color-gray;
+    box-shadow: inset 1px 1px 0px use.$color-gray, inset -1px -1px 0px use.$color-gray;
   }
 }
 
@@ -620,7 +633,7 @@
   left: 0;
   width: 30px;
   height: 30px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid use.$color-program-border;
   box-sizing: border-box;
 
   @include use.media-tablet {
@@ -640,7 +653,7 @@
     left: 6px;
     width: 19px;
     height: 15px;
-    background-image: url(../img/svg/mob-checkbox.svg);
+    background-image: url("../img/svg/mob-checkbox.svg");
   }
 
   @include use.media-tablet {
@@ -648,7 +661,7 @@
     left: 8px;
     width: 24px;
     height: 19px;
-    background-image: url(../img/svg/tab-checkbox.svg);
+    background-image: url("../img/svg/tab-checkbox.svg");
   }
 }
 

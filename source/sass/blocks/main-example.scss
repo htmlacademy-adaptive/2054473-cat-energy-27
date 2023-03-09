@@ -125,15 +125,18 @@
   position: relative;
   border: 1px solid use.$color-example-line;
   border-radius: 3px;
+  text-align: center;
 
   @include use.media-mobile-only {
-    width: 122px;
-    min-height: 54px;
+    width: 102px;
+    min-height: 24px;
+    padding: 15px 10px;
   }
 
   @include use.media-tablet {
-    width: 160px;
-    min-height: 70px;
+    width: 140px;
+    min-height: 42px;
+    padding: 14px 10px;
   }
 }
 
@@ -340,7 +343,7 @@
     top: 9px;
     left: -3px;
     border: 9px solid transparent;
-    border-right: 8px solid #666;
+    border-right: 8px solid use.$color-light-gray;
   }
 
   &::after {
@@ -349,6 +352,6 @@
     top: 9px;
     right: -3px;
     border: 9px solid transparent;
-    border-left: 8px solid #666;
+    border-left: 8px solid use.$color-light-gray;
   }
 }

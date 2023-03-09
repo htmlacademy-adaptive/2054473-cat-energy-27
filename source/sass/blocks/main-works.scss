@@ -130,7 +130,7 @@
       counter-increment: section;
       content: counter(section);
       position: absolute;
-      top: 0;
+      bottom: 30px;
       right: 0;
       @include use.font-oswald-big;
       font-size: 280px;

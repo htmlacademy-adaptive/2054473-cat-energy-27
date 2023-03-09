@@ -94,8 +94,8 @@
 
     @include use.media-tablet {
       padding: 50px 35px 37px;
-      background: #fff;
-      border: 2px solid #f2f2f2;
+      background: use.$color-white;
+      border: 2px solid use.$color-program;
       max-height: 338px;
       top: 1px;
     }
@@ -103,7 +103,6 @@
     @include use.media-desktop {
       padding: 50px 33px 26px 29px;
       max-height: 352px;
-      border: 2px solid #F2F2F2;
       outline: none;
       top: 0;
     }
@@ -129,6 +128,18 @@
     height: 196px;
     left: 39px;
     top: -81px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 1px solid use.$color-black;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 
@@ -185,11 +196,23 @@
   @include use.media-desktop {
     margin: 0 auto 23px;
   }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 1px solid use.$color-black;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .product-item__title {
   margin: 0;
-  color: use.$color-catalog-product-title;
+  color: use.$color-label;
   text-transform: uppercase;
   position: relative;
 
@@ -237,6 +260,7 @@
 
 .product-table__row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   @include use.media-tablet {
@@ -253,6 +277,7 @@
   @include use.media-mobile-only {
     @include use.font-lato-12;
     line-height: 16px;
+    max-width: 82px;
   }
 
   @include use.media-tablet {
@@ -379,7 +404,6 @@
     margin-bottom: 23px;
   }
 
-
   &:hover::before,
   &:hover::after {
     background-color: use.$color-program-border;
@@ -409,6 +433,5 @@
 
   @include use.media-desktop {
     left: 2px;
-
   }
 }

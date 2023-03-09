@@ -109,13 +109,22 @@
   }
 
   &--catalog {
-
     @include use.media-tablet {
       margin-bottom: 64px;
     }
 
     @include use.media-desktop {
       margin-bottom: 75px;
+    }
+  }
+
+  &--form {
+    @include use.media-tablet {
+      margin-bottom: 64px;
+    }
+
+    @include use.media-desktop {
+      margin-bottom: 73px;
     }
   }
 }
@@ -249,10 +258,13 @@
     justify-content: start;
     flex-wrap: wrap;
     column-gap: 37px;
+    max-width: 450px;
+    row-gap: 10px;
   }
 
   @include use.media-desktop {
     column-gap: 34px;
+    max-width: 480px;
   }
 
   &--catalog {
@@ -282,14 +294,14 @@
 
   @include use.media-mobile-only {
     border-top: 1px solid transparent;
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid use.$color-line;
     background-color: use.$color-white;
     padding-top: 10px;
     padding-bottom: 10px;
 
 
     &:first-child {
-      border-top: 1px solid #E6E6E6;
+      border-top: 1px solid use.$color-line;
     }
   }
 
@@ -330,7 +342,7 @@
 
     @include use.media-desktop {
       color: use.$color-white;
-      left: -2px;
+      left: -1px;
     }
 
     &--catalog {
@@ -365,16 +377,24 @@
   }
 
   &--catalog::before {
-    @include use.media-desktop {
-      background-color: use.$color-green;
-    }
-
     @include use.media-tablet {
       bottom: -2px;
     }
 
     @include use.media-desktop {
+      background-color: use.$color-green;
       bottom: -5px;
+    }
+  }
+
+  &--form::before {
+    @include use.media-tablet {
+      bottom: -2px;
+    }
+
+    @include use.media-desktop {
+      background-color: use.$color-green;
+      bottom: -4px;
     }
   }
 
@@ -401,6 +421,17 @@
   &--catalog {
     @include use.media-desktop {
       color: use.$color-black;
+    }
+  }
+
+  &--form {
+    @include use.media-tablet {
+      left: -1px;
+      color: use.$color-black;
+    }
+
+    @include use.media-desktop {
+      left: 0;
     }
   }
 }
