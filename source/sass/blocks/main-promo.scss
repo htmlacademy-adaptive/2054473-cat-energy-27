@@ -1,0 +1,145 @@
+@use "../global/use.scss";
+
+.main-promo {
+  display: block;
+  position: relative;
+
+  @include use.media-mobile-only {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      min-height: 302px;
+      background-color: rgba(104, 183, 56, .85);
+      z-index: 2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-height: 302px;
+      background-image: url("../img/web-mob-main-cat.webp");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      background-color: use.$color-gray;
+      z-index: 1;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/web-mob-main-cat@2x.webp");
+      }
+    }
+  }
+}
+
+.promo-box {
+  padding: 0 20px;
+  display: block;
+  position: relative;
+  z-index: 3;
+
+  @include use.media-desktop {
+    margin-bottom: 51px;
+  }
+}
+
+.promo-box__title {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-bold;
+    color: use.$color-white;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-top: 26px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-large;
+    padding-left: 97px;
+    margin-bottom: 42px;
+  }
+
+  @include use.media-desktop {
+    padding-left: 169px;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+}
+
+.promo-box__desc {
+  margin: 0;
+  text-transform: uppercase;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-small;
+    line-height: 14px;
+    text-align: center;
+    color: use.$color-white;
+    margin-bottom: 29px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    padding-left: 100px;
+    margin-bottom: 20px;
+  }
+
+  @include use.media-desktop {
+    padding-left: 170px;
+    max-width: 460px;
+    margin-bottom: auto;
+  }
+}
+
+.promo-box__img {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+
+  @include use.media-mobile-only {
+    margin-bottom: 2px;
+  }
+
+  @include use.media-tablet {
+    width: 709px;
+    height: 609px;
+  }
+
+  @include use.media-desktop {
+    position: absolute;
+    margin: 0;
+    width: 552px;
+    height: 499px;
+    top: -83px;
+    left: 559px;
+  }
+}
+
+.promo-box__btn {
+  @include use.media-mobile-only {
+    padding-top: 12px;
+    padding-bottom: 11px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    font-weight: 400;
+    position: absolute;
+    top: 231px;
+    left: 121px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    width: 244px;
+    z-index: 5;
+  }
+
+  @include use.media-desktop {
+    top: auto;
+    left: 190px;
+  }
+}

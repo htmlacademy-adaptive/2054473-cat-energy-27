@@ -1,1 +1,14 @@
-// Начните писать стили здесь
+@use "./global/use.scss";
+@use "./global/base.scss";
+@use "./global/mixins.scss";
+@use "./blocks/btn.scss";
+@use "./blocks/main-nav.scss";
+@use "./blocks/main-program.scss";
+@use "./blocks/main-promo.scss";
+@use "./blocks/main-catalog.scss";
+@use "./blocks/main-extra.scss";
+@use "./blocks/main-works.scss";
+@use "./blocks/main-example.scss";
+@use "./blocks/main-form.scss";
+@use "./blocks/main-contacts.scss";
+@use "./blocks/main-footer.scss";
