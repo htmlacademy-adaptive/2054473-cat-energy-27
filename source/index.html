@@ -21,8 +21,8 @@
     <nav class="main-nav main-nav--closed main-nav--nojs">
       <a class="main-nav__logo" href="#">
         <picture class="main-nav__picture">
-          <source media="(min-width: 1440px)" srcset="img/svg/desk-cat.svg" sizes="202px">
-          <source media="(min-width: 768px)" srcset="img/svg/tab-cat.svg" sizes="174px">
+          <source media="(min-width: 1440px)" srcset="img/svg/desk-cat.svg">
+          <source media="(min-width: 768px)" srcset="img/svg/tab-cat.svg">
           <img class="main-nav__img" src="img/svg/mob-cat.svg" width="34" height="38" alt="На главную.">
         </picture>
         <img class="main-nav__text" src="img/svg/head-logo.svg" width="101" height="18" alt="Кэт энерджи.">
@@ -65,7 +65,7 @@
             width="280" height="270" alt="Банка питания для котиков со вкусом курицы.">
         </picture>
       </div>
-      <a class="promo-box__btn btn" href="form.html">Подобрать программу</a>
+      <a class="promo-box-btn btn" href="form.html">Подобрать программу</a>
     </section>
   </header>
 
@@ -109,48 +109,51 @@
     </section>
 
     <section class="main-example">
-      <div class="example-info-box">
-        <h2 class="example-info-box__title">Живой пример</h2>
-        <p class="example-info-box__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy
-          Slim. Отличный результат без изнуряющих
-          тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
-        <div class="info-box-table">
-          <ul class="info-box-list">
-            <li class="info-box-list__item">
-              <p class="info-box-list__title">5 кг</p>
-              <p class="info-box-list__desc">Снижение веса</p>
-            </li>
-            <li class="info-box-list__item">
-              <p class="info-box-list__title">60 дней</p>
-              <p class="info-box-list__desc">Затрачено времени</p>
-            </li>
-          </ul>
-          <p class="under-table-text">
-            <span class="under-table-text__position">Затраты на питание:</span> 15 000 руб.
-          </p>
+      <div class="example-wrapper">
+        <div class="example-info-box">
+          <h2 class="example-info-box__title">Живой пример</h2>
+          <p class="example-info-box__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat
+            Energy
+            Slim. Отличный результат без изнуряющих
+            тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
+          <div class="info-box">
+            <ul class="info-box-list">
+              <li class="info-box-list__item">
+                <p class="info-box-list__title">5 кг</p>
+                <p class="info-box-list__desc">Снижение веса</p>
+              </li>
+              <li class="info-box-list__item">
+                <p class="info-box-list__title">60 дней</p>
+                <p class="info-box-list__desc">Затрачено времени</p>
+              </li>
+            </ul>
+            <p class="info-box-under-text">
+              <span class="info-box-under-text__position">Затраты на питание:</span> 15 000 руб.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="example-compare-box">
-        <picture>
-          <source media="(min-width: 768px)" srcset="img/web-tab-cat-fat.webp, img/web-tab-cat-fat@2x.webp 2x"
-            type="image/webp">
-          <source media="(min-width: 768px)" srcset="img/web-tab-cat-fat.png, img/web-tab-cat-fat@2x.png 2x">
-          <source srcset="img/web-mob-cat-fat.webp, img/web-mob-cat-fat@2x.webp 2x" type="image/webp">
-          <img class="compare-box__img compare-box__img--fat" src="img/web-mob-cat-fat.png"
-            srcset="img/web-mob-cat-fat@2x.png 2x" width="311" height="232" alt="Толстый кот до похудения">
-        </picture>
+        <div class="example-compare-box">
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/web-tab-cat-fat.webp, img/web-tab-cat-fat@2x.webp 2x"
+              type="image/webp">
+            <source media="(min-width: 768px)" srcset="img/web-tab-cat-fat.png, img/web-tab-cat-fat@2x.png 2x">
+            <source srcset="img/web-mob-cat-fat.webp, img/web-mob-cat-fat@2x.webp 2x" type="image/webp">
+            <img class="example-compare-box-img example-compare-box-img--fat" src="img/web-mob-cat-fat.png"
+              srcset="img/web-mob-cat-fat@2x.png 2x" width="311" height="232" alt="Толстый кот до похудения">
+          </picture>
 
-        <picture>
-          <source media="(min-width: 768px)" srcset="img/web-tab-cat-thin.webp, img/web-tab-cat-thin@2x.webp 2x"
-            type="image/webp">
-          <source media="(min-width: 768px)" srcset="img/web-tab-cat-thin.png, img/web-tab-cat-thin@2x.png 2x">
-          <source srcset="img/web-mob-cat-thin.webp, img/web-mob-cat-thin@2x.webp 2x" type="image/webp">
-          <img class="compare-box__img compare-box__img--thin" src="img/web-mob-cat-thin.png"
-            srcset="img/web-mob-cat-thin@2x.png 2x" width="251" height="240" alt="Стройный кот после похудения">
-        </picture>
-        <div class="example-range-bar">
-          <button class="example-range-bar__toggle" type="button" aria-label="Изменить толщину котика.">
-          </button>
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/web-tab-cat-thin.webp, img/web-tab-cat-thin@2x.webp 2x"
+              type="image/webp">
+            <source media="(min-width: 768px)" srcset="img/web-tab-cat-thin.png, img/web-tab-cat-thin@2x.png 2x">
+            <source srcset="img/web-mob-cat-thin.webp, img/web-mob-cat-thin@2x.webp 2x" type="image/webp">
+            <img class="compare-box-img compare-box-img--thin" src="img/web-mob-cat-thin.png"
+              srcset="img/web-mob-cat-thin@2x.png 2x" width="251" height="240" alt="Стройный кот после похудения">
+          </picture>
+          <div class="example-range-bar">
+            <button class="example-range-bar__toggle" type="button" aria-label="Изменить толщину котика.">
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -165,54 +168,58 @@
       <div class="contacts-map">
         <iframe class="map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2376.7583520984363!2d30.320639479074217!3d59.938653581149296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1678287758335!5m2!1sru!2sru"
-          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          width="320" height="400" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
   </main>
 
   <footer class="main-footer">
-    <h2 class="visually-hidden">Мы в соцсетях.</h2>
-    <a href="#" class="footer-logo">
-      <picture>
-        <source media="(min-width: 768px)" srcset="img/svg/tab-desk-footer-logo.svg" sizes="143px">
-        <img class="footer-logo__img" src="img/svg/mob-footer-logo.svg" width="128" height="24" alt="Кэт энерджи.">
-      </picture>
-    </a>
-    <ul class="footer-social__box">
-      <li class="footer-social__item">
-        <a class="footer-social__link" href="https://vk.com/htmlacademy" target="_blank"
-          aria-label="Группа HTML Academy в ВКонтакте.">
-          <svg class="footer-social__ico" width="29" height="22" role="img">
-            <use href="img/svg/sprite.svg#icon-vk"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="footer-social__item">
-        <a class="footer-social__link" href="https://www.youtube.com/user/htmlacademyru" target="_blank"
-          aria-label="Канал HTML Academy на YouTube.">
-          <svg class="footer-social__ico" width="29" height="22" role="img">
-            <use href="img/svg/sprite.svg#icon-youtube"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="footer-social__item">
-        <a class="footer-social__link" href="https://t.me/htmlacademy" target="_blank"
-          aria-label="Канал HTML Academy в Telegram.">
-          <svg class="footer-social__ico" width="29" height="22" role="img">
-            <use href="img/svg/sprite.svg#icon-telegram"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-
-    <div class="footer-created__box">
-      <a class="footer-created__link" href="https://htmlacademy.ru/" target="_blank" aria-label="Сайт HTML Academy.">
-        <span class="footer-created__text">HTML Academy</span>
-        <svg class="footer-created__ico" width="27" height="35" role="img">
-          <use href="img/svg/sprite.svg#icon-htmlacademy"></use>
-        </svg>
+    <div class="footer-wrapper">
+      <h2 class="visually-hidden">Мы в соцсетях.</h2>
+      <a href="#" class="footer-logo">
+        <picture>
+          <source media="(min-width: 768px)" srcset="img/svg/tab-desk-footer-logo.svg">
+          <img class="footer-logo__img" src="img/svg/mob-footer-logo.svg" width="128" height="24" alt="Кэт энерджи.">
+        </picture>
       </a>
+      <ul class="footer-social">
+        <li class="footer-social__item">
+          <a class="footer-social__link" href="https://vk.com/htmlacademy" target="_blank"
+            aria-label="Группа HTML Academy в ВКонтакте.">
+            <svg class="footer-social__ico" width="29" height="22" role="img">
+              <use href="img/svg/sprite.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-social__item">
+          <a class="footer-social__link" href="https://www.youtube.com/user/htmlacademyru" target="_blank"
+            aria-label="Канал HTML Academy на YouTube.">
+            <svg class="footer-social__ico" width="29" height="22" role="img">
+              <use href="img/svg/sprite.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-social__item">
+          <a class="footer-social__link" href="https://t.me/htmlacademy" target="_blank"
+            aria-label="Канал HTML Academy в Telegram.">
+            <svg class="footer-social__ico" width="29" height="22" role="img">
+              <use href="img/svg/sprite.svg#icon-telegram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <div class="footer-created">
+        <a class="footer-created__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank"
+          aria-label="Сайт HTML Academy.">
+          <span class="footer-created__text">HTML Academy</span>
+          <svg class="footer-created__ico" width="27" height="35" role="img">
+            <use href="img/svg/sprite.svg#icon-htmlacademy"></use>
+          </svg>
+        </a>
+      </div>
+
     </div>
   </footer>
 

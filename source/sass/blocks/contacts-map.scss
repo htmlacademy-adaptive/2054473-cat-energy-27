@@ -1,0 +1,49 @@
+@use "../global/use.scss";
+
+.contacts-map {
+  display: block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include use.media-mobile-only {
+    background-image: url("../img/web-mob-map.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/web-mob-map@2x.jpg");
+    }
+  }
+
+  @include use.media-tablet {
+    height: 400px;
+    background-image: url("../img/web-tab-map.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/web-tab-map@2x.jpg");
+    }
+  }
+
+  @include use.media-desktop {
+    height: 400px;
+    background-image: url("../img/web-desk-map.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/web-desk-map@2x.jpg");
+    }
+  }
+}
+
+.map {
+  border: 0;
+  display: block;
+  width: 100%;
+
+  @include use.media-mobile-only {
+    height: 362px;
+  }
+
+  @include use.media-tablet {
+    height: 400px;
+  }
+}

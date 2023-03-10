@@ -2,22 +2,36 @@
 
 .main-footer {
   background-color: use.$color-program;
+
+  @include use.media-mobile-only {
+    padding: 20px 20px 39px;
+  }
+
+  @include use.media-tablet {
+    padding: 53px 29px 54px 31px;
+  }
+
+  @include use.media-desktop {
+    padding: 64px 110px 64px 109px;
+  }
+}
+
+.footer-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 
   @include use.media-mobile-only {
     flex-direction: column;
-    padding: 20px 20px 39px;
   }
 
   @include use.media-tablet {
-    padding: 53px 29px 54px 31px;
     justify-content: space-between;
   }
 
   @include use.media-desktop {
-    padding: 64px 110px 64px 109px;
+    width: 1220px;
+    margin: 0 auto;
   }
 }
 
@@ -68,7 +82,7 @@
   }
 }
 
-.footer-social__box {
+.footer-social {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -123,7 +137,7 @@
   }
 }
 
-.footer-created__box {
+.footer-created {
   display: block;
 
   @include use.media-mobile-only {
