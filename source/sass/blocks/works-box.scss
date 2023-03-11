@@ -105,12 +105,12 @@
     padding-bottom: 48px;
 
     &::after {
+      @include use.font-oswald-big;
       counter-increment: section;
       content: counter(section);
       position: absolute;
       top: 0;
       right: 0;
-      @include use.font-oswald-big;
       font-size: 280px;
       line-height: 201px;
       color: use.$color-program;

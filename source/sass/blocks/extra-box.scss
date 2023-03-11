@@ -160,9 +160,9 @@
 }
 
 .extra-box__btn {
+  @include use.font-oswald-normal;
   width: 100%;
   padding: 10px 0;
-  @include use.font-oswald-normal;
   position: relative;
 
   @include use.media-desktop {

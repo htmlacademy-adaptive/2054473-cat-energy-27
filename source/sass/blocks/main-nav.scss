@@ -31,7 +31,6 @@
 
     &--opened .main-nav__wrapper {
       display: block;
-
     }
 
     &--nojs .main-nav__toggle {
@@ -299,15 +298,15 @@
       color: use.$color-white;
       left: -1px;
     }
+  }
 
-    &--catalog {
-      @include use.media-tablet {
-        left: -3px;
-      }
+  &--current--catalog {
+    @include use.media-tablet {
+      left: -3px;
+    }
 
-      @include use.media-desktop {
-        left: 1px;
-      }
+    @include use.media-desktop {
+      left: 1px;
     }
   }
 
