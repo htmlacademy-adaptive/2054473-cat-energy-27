@@ -1,67 +1,13 @@
 @use "../global/use.scss";
 
-.main-header {
-  @include use.media-mobile-only {
-    margin-bottom: 20px;
-  }
-
-  @include use.media-desktop {
-    position: relative;
-    min-height: 694px;
-    margin-bottom: 82px;
-
-    &--index::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: -4px;
-      width: 50%;
-      min-height: 697px;
-      width: 719px;
-      background-color: rgba(104, 183, 56, .85);
-      z-index: 2;
-    }
-
-    &--index::after {
-      content: "";
-      position: absolute;
-      top: -4px;
-      right: 0;
-      width: 719px;
-      height: 697px;
-      background-image: url("../img/web-desk-main-cat.webp");
-      background-repeat: no-repeat;
-      background-position: left bottom;
-      background-size: contain;
-      background-color: #444;
-      z-index: 1;
-
-      @media (min-resolution: 2dppx) {
-        background-image: url("../img/web-desk-main-cat@2x.webp");
-      }
-    }
-  }
-
-  &--catalog {
-    margin: 0;
-
-    @include use.media-mobile-only {
-      border-bottom: 1px solid use.$color-program-border;
-    }
-
-    @include use.media-desktop {
-      min-height: auto;
-      margin-top: 1px;
-    }
-  }
-}
-
 .main-nav {
   position: relative;
   padding: 11px 20px;
   z-index: 5;
 
   @include use.media-mobile-only {
+    padding: 11px 0;
+
     &--opened .main-nav__toggle {
       background-image: url("../img/svg/mob-menu-close.svg");
       margin: 21px 23px;
@@ -76,7 +22,7 @@
       width: 24px;
       height: 18px;
       top: -2px;
-      right: 0px;
+      right: 0;
     }
 
     &--closed .main-nav__wrapper {
@@ -93,6 +39,9 @@
 
     &--nojs .main-nav__wrapper {
       display: block;
+      position: relative;
+      top: 11px;
+      margin: 0;
     }
   }
 
@@ -105,7 +54,9 @@
 
   @include use.media-desktop {
     padding: 53px 111px 0 110px;
+    margin: 0 auto;
     margin-bottom: 112px;
+    max-width: 1220px;
   }
 
   &--catalog {
@@ -165,9 +116,14 @@
 .main-nav__img {
   display: block;
   position: absolute;
-  top: 10px;
+
+  @include use.media-mobile-only {
+    top: 12px;
+    left: 21px;
+  }
 
   @include use.media-tablet {
+    top: 10px;
     width: 174px;
     height: 52px;
     position: static;
@@ -230,16 +186,14 @@
 .main-nav__wrapper {
   position: absolute;
   z-index: 2;
-  top: 0;
   width: 100%;
   top: 65px;
-  margin-left: -20px;
+  margin: 0;
 
   @include use.media-tablet {
     display: inline-flex;
     position: relative;
     width: auto;
-    margin: 0;
     top: 4px;
   }
 
@@ -344,21 +298,21 @@
       color: use.$color-white;
       left: -1px;
     }
+  }
 
-    &--catalog {
-      @include use.media-tablet {
-        left: -3px;
-      }
+  &--current--catalog {
+    @include use.media-tablet {
+      left: -3px;
+    }
 
-      @include use.media-desktop {
-        left: 1px;
-      }
+    @include use.media-desktop {
+      left: 1px;
     }
   }
 
   &--current::before,
   &--current--catalog::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -12px;

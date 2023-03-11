@@ -16,10 +16,10 @@
   }
 
   &:focus-visible {
-    outline: 1px solid use.$color-black;
+    outline: 3px solid use.$color-gray;
   }
 
   &:active {
-    color: rgba(255, 255, 255, .3);
+    color: rgba(255, 255, 255, 0.3);
   }
 }
