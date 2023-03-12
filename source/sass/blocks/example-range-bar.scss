@@ -1,0 +1,72 @@
+@use "../global/use.scss";
+
+.example-range-bar {
+  position: absolute;
+  background-color: use.$color-light-gray;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 256px;
+  width: 4px;
+  border-radius: 2px;
+  cursor: pointer;
+
+  @include use.media-tablet {
+    height: 512px;
+  }
+
+  &:hover {
+    background-color: use.$color-green;
+  }
+
+  &:hover>.example-range-bar__toggle {
+    border-color: use.$color-green;
+  }
+
+  &:hover>.example-range-bar__toggle::before {
+    border-color: transparent use.$color-green transparent transparent;
+  }
+
+  &:hover>.example-range-bar__toggle::after {
+    border-color: transparent transparent transparent use.$color-green;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.example-range-bar__toggle {
+  position: relative;
+  border: 2px solid use.$color-light-gray;
+  border-radius: 20px;
+  background-color: use.$color-white;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 1px solid use.$color-black;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -3px;
+    border: 9px solid transparent;
+    border-right: 8px solid use.$color-light-gray;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -3px;
+    border: 9px solid transparent;
+    border-left: 8px solid use.$color-light-gray;
+  }
+}

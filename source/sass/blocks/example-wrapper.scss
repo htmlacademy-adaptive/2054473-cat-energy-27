@@ -1,0 +1,10 @@
+@use "../global/use.scss";
+
+.example-wrapper {
+  @include use.media-desktop {
+    display: flex;
+    column-gap: 228px;
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+}

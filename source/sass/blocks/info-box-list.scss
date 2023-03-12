@@ -1,0 +1,96 @@
+@use "../global/use.scss";
+
+.info-box-list {
+  display: grid;
+
+  grid-row-gap: 6px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+  @include use.media-mobile-only {
+    grid-template-columns: 124px 124px;
+    grid-column-gap: 32px;
+    margin-bottom: 34px;
+  }
+
+  @include use.media-tablet {
+    grid-template-columns: 161px 161px;
+    grid-column-gap: 43px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 61px;
+  }
+}
+
+.info-box-list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid use.$color-example-line;
+  border-radius: 3px;
+  text-align: center;
+
+  @include use.media-mobile-only {
+    width: 102px;
+    min-height: 24px;
+    padding: 15px 10px;
+  }
+
+  @include use.media-tablet {
+    width: 140px;
+    min-height: 42px;
+    padding: 14px 10px;
+  }
+}
+
+.info-box-list__title {
+  padding: 0;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-24;
+    line-height: 24px;
+    top: -1px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-bold;
+    font-size: 30px;
+    line-height: 37px;
+    top: -3px;
+  }
+}
+
+.info-box-list__desc {
+  position: absolute;
+  margin: 0;
+  text-align: center;
+  text-transform: lowercase;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-12;
+    width: 60px;
+    padding: 0 14px;
+    top: 85%;
+    background-color: use.$color-example;
+  }
+
+  @include use.media-tablet {
+    @include use.font-lato-small;
+    line-height: 14px;
+    top: 90%;
+    padding: 0 8px;
+    background-color: use.$color-white;
+  }
+
+  @include use.media-desktop {
+    padding: 0 11px;
+    background-color: use.$color-example;
+  }
+}

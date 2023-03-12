@@ -1,0 +1,39 @@
+@use "../global/use.scss";
+
+.example-compare-box-img {
+  display: block;
+  position: absolute;
+  object-fit: cover;
+
+  &--fat {
+    top: 0;
+    left: 0;
+    object-position: left;
+
+    @include use.media-mobile-only {
+      width: 140px;
+      height: 256px;
+    }
+
+    @include use.media-tablet {
+      width: 280px;
+      height: 512px;
+    }
+  }
+
+  &--thin {
+    top: 0;
+    right: 0;
+    object-position: right;
+
+    @include use.media-mobile-only {
+      width: 140px;
+      height: 256px;
+    }
+
+    @include use.media-tablet {
+      width: 280px;
+      height: 512px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../global/use.scss";
+
+.catalog-title {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-bold;
+    margin-bottom: 41px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-large;
+    margin-bottom: 163px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 165px;
+  }
+}
