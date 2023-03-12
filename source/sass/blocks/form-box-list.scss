@@ -1,0 +1,89 @@
+@use "../global/use.scss";
+
+.form-box-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  @include use.media-mobile-only {
+    row-gap: 14px;
+    padding-bottom: 24px;
+  }
+
+  @include use.media-tablet {
+    row-gap: 20px;
+  }
+
+  &--border::after {
+    @include use.media-mobile-only {
+      content: "";
+      position: absolute;
+      width: calc(100% - -42px);
+      height: 1px;
+      background-color: use.$color-program-border;
+      bottom: 0;
+      left: -22px;
+    }
+  }
+
+  &--text-group {
+    @include use.media-mobile-only {
+      margin-bottom: 29px;
+    }
+
+    @include use.media-tablet {
+      margin-bottom: 72px;
+    }
+
+    @include use.media-desktop {
+      margin: 0;
+      width: 569px;
+      margin-right: 80px;
+    }
+  }
+
+  &--radio-group {
+    @include use.media-mobile-only {
+      row-gap: 25px;
+    }
+
+    @include use.media-tablet {
+      border: 1px solid use.$color-input-border;
+      padding: 30px 28px 28px;
+      row-gap: 23px;
+    }
+
+    @include use.media-desktop {
+      width: 512px;
+    }
+  }
+
+  &--contact-group {
+    @include use.media-mobile-only {
+      padding: 0;
+    }
+
+    @include use.media-desktop {
+      flex-direction: row;
+      column-gap: 78px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &--extra {
+    @include use.media-mobile-only {
+      row-gap: 24.5px;
+    }
+
+    @include use.media-tablet {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      row-gap: 42px;
+    }
+  }
+}

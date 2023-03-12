@@ -1,0 +1,48 @@
+@use "../global/use.scss";
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  @include use.media-mobile-only {
+    padding-top: 20px;
+    padding-bottom: 19px;
+    border-bottom: 1px solid use.$color-program-border;
+    margin-bottom: 11px;
+    width: 100%;
+    left: -1px;
+  }
+
+  &:hover,
+  &:focus-within {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 1px solid use.$color-black;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.footer-logo__img {
+  display: block;
+  position: relative;
+
+  @include use.media-mobile-only {
+    left: 1px;
+  }
+
+  @include use.media-tablet {
+    top: -1px;
+    left: -1px;
+  }
+
+  @include use.media-desktop {
+    top: 0;
+    left: 1px;
+  }
+}

@@ -1,0 +1,36 @@
+@use "../global/use.scss";
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: unset;
+  border: 0;
+}
+
+.product-table__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include use.media-tablet {
+    margin-bottom: 6px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid use.$color-example-line;
+  }
+}
+
+.product-table__cell {
+  padding: 0;
+  color: use.$color-gray;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-12;
+    line-height: 16px;
+    max-width: 82px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-lato-normal;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,49 @@
+@use "../global/use.scss";
+
+.footer-created {
+  display: block;
+
+  @include use.media-mobile-only {
+    width: 100%;
+  }
+}
+
+.footer-created__link {
+  display: flex;
+  color: use.$color-gray;
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+
+  @include use.media-tablet {
+    max-width: 168px;
+  }
+
+  &:hover>.footer-created__ico,
+  &:focus-within>.footer-created__ico {
+    color: use.$color-green;
+  }
+
+  &:focus-visible {
+    outline: 1px solid use.$color-black;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.footer-created__text {
+  position: relative;
+  max-width: 113px;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-normal;
+    line-height: 19.2px;
+    left: -1px;
+  }
+
+  @include use.media-tablet {
+    margin-right: 28px;
+  }
+}

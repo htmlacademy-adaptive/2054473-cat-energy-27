@@ -1,23 +1,20 @@
 @use "../global/use.scss";
 
-.main-catalog {
-  padding: 26px 20px 0;
+.footer-wrapper {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @include use.media-mobile-only {
-    margin-bottom: 25px;
+    flex-direction: column;
   }
 
   @include use.media-tablet {
-    padding: 0 30px;
-    margin-bottom: 68px;
+    justify-content: space-between;
   }
 
   @include use.media-desktop {
-    padding: 0 110px;
     width: 1220px;
     margin: 0 auto;
-    margin-bottom: 75px;
   }
 }

@@ -84,27 +84,3 @@
     left: 559px;
   }
 }
-
-.promo-box-btn {
-  @include use.media-mobile-only {
-    padding-top: 12px;
-    padding-bottom: 11px;
-  }
-
-  @include use.media-tablet {
-    @include use.font-oswald-big;
-    font-weight: 400;
-    position: absolute;
-    top: 231px;
-    left: 121px;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    width: 244px;
-    z-index: 5;
-  }
-
-  @include use.media-desktop {
-    top: auto;
-    left: 190px;
-  }
-}

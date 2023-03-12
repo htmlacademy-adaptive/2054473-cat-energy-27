@@ -1,0 +1,57 @@
+@use "../global/use.scss";
+
+.example-info-box {
+  display: block;
+
+  @include use.media-mobile-only {
+    padding-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  @include use.media-tablet {
+    margin-bottom: 104px;
+  }
+
+  @include use.media-desktop {
+    margin: 0;
+  }
+}
+
+.example-info-box__title {
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-bold;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-large;
+    margin-bottom: 63px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 147px;
+  }
+}
+
+.example-info-box__text {
+  display: inline-block;
+  margin: 0;
+
+  @include use.media-mobile-only {
+    @include use.font-lato-small;
+    margin-bottom: 20px;
+  }
+
+  @include use.media-tablet {
+    @include use.font-lato-normal;
+    margin-bottom: 54px;
+  }
+
+  @include use.media-desktop {
+    margin-bottom: 69px;
+    max-width: 432px;
+  }
+}

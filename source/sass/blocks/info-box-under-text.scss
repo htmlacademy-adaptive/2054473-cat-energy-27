@@ -1,0 +1,35 @@
+@use "../global/use.scss";
+
+.info-box-under-text {
+  margin: 0;
+  text-transform: uppercase;
+
+  @include use.media-mobile-only {
+    @include use.font-oswald-small;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  @include use.media-tablet {
+    @include use.font-oswald-big;
+    text-align: right;
+    width: 174px;
+  }
+
+  @include use.media-desktop {
+    text-align: left;
+    width: auto;
+  }
+}
+
+.info-box-under-text__position {
+  @include use.media-tablet {
+    display: inline-block;
+    margin-bottom: 9px;
+  }
+
+  @include use.media-desktop {
+    margin: 0;
+    margin-right: 61px;
+  }
+}
